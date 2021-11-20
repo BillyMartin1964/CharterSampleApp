@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace CharterSampleApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class BillingPage : ContentPage
     {
-        public HomePage()
+        public BillingPage()
         {
             InitializeComponent();
         }
