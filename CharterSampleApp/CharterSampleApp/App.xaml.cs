@@ -21,6 +21,7 @@ namespace CharterSampleApp
 
         protected override void OnStart()
         {
+            Routing.RegisterRoute("settings", typeof(SettingsPage));
         }
 
         protected override void OnSleep()

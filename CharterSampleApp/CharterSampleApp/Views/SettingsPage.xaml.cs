@@ -1,6 +1,4 @@
-﻿using CharterSampleApp.ViewModels;
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace CharterSampleApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LoginPage : ContentPage
+    public partial class SettingsPage : ContentPage
     {
-        public LoginPage()
+        public SettingsPage()
         {
             InitializeComponent();
-            this.BindingContext = new LoginViewModel();
         }
     }
 }

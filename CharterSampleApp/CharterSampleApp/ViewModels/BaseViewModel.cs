@@ -5,7 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace CharterSampleApp.ViewModels
@@ -52,5 +53,26 @@ namespace CharterSampleApp.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+        private bool userLoggedIn;
+        public bool UserLoggedIn
+        {
+            get { return userLoggedIn; }
+            set
+            {
+                userLoggedIn = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand goToSettingsCommand;
+        public ICommand GoToSettingsCommand =>
+            goToSettingsCommand ??
+            (goToSettingsCommand = new Command(async () => await ExecuteGoToSettingsCommand()));
+
+        private async Task ExecuteGoToSettingsCommand()
+        {
+            await Shell.Current.GoToAsync("settings");
+        }
     }
 }

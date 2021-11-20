@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
              x:Class="CharterSampleApp.Views.BillingPage">
-
+    <ContentPage.BindingContext>
+        <viewModel:BillingViewModel />
+    </ContentPage.BindingContext>
     <Shell.TitleView>
         <Label Text="Billing" Style="{StaticResource TitleBarStyle}" />
     </Shell.TitleView>
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Order="Primary" Command="{Binding GoToSettingsCommand}"
+            Priority="0" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FaIcons" Size="Small"
+                                 Glyph="&#xf013;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"

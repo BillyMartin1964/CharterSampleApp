@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CharterSampleApp.Views.AboutPage"
-             xmlns:vm="clr-namespace:CharterSampleApp.ViewModels"
+             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
              Title="{Binding Title}">
 
     <Shell.TitleView>
@@ -10,7 +10,7 @@
     </Shell.TitleView>
 
     <ContentPage.BindingContext>
-        <vm:AboutViewModel />
+        <viewModel:AboutViewModel />
     </ContentPage.BindingContext>
     
     <ContentPage.Resources>
@@ -18,7 +18,16 @@
             <Color x:Key="Accent">#96d1ff</Color>
         </ResourceDictionary>
     </ContentPage.Resources>
-
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+            Order="Primary" Command="{Binding GoToSettingsCommand}"
+            Priority="0" >
+            <ToolbarItem.IconImageSource>
+                <FontImageSource FontFamily="FaIcons" Size="Small"
+                                 Glyph="&#xf013;"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

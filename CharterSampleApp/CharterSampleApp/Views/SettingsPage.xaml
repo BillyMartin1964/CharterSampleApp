@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
+             x:Class="CharterSampleApp.Views.SettingsPage">
+    <ContentPage.BindingContext>
+        <viewModel:SettingsViewModel />
+    </ContentPage.BindingContext>
+    <Shell.TitleView>
+        <Label Text="Settings" Style="{StaticResource TitleBarStyle}" />
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Welcome to Settings!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
