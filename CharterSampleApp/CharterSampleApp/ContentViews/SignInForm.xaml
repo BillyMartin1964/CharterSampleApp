@@ -9,6 +9,7 @@
 
             <customRenderers:EntryBoxRenderer  Placeholder="Enter name" Style="{StaticResource EntryBoxStyle}" />
             <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
+            <Button Text="Sign In" Margin="20,2"  Command="{Binding ToggleLoggedInCommand}"  />
             <Label HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>

@@ -21,9 +21,6 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="{Binding UserLoggedInMessage}" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Login / Out"   HorizontalOptions="CenterAndExpand" Command="{Binding ToggleLoggedInCommand}" />
             <ContentView Content="{Binding AccountCV}" />
         </StackLayout>
     </ContentPage.Content>

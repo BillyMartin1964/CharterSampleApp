@@ -4,7 +4,7 @@
              x:Class="CharterSampleApp.ContentViews.AccountContentView">
   <ContentView.Content>
       <StackLayout>
-          <Label Text="Account Info!" />
+          <Button Text="Sign out" HorizontalOptions="End" HeightRequest="18"  WidthRequest="60" Padding="0"  Margin="10" Command="{Binding ToggleLoggedInCommand}" FontSize="10"  />
       </StackLayout>
   </ContentView.Content>
 </ContentView>

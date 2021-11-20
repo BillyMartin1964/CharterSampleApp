@@ -16,7 +16,7 @@
           <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
-
+            <Button Text="Register" Margin="20,2"  Command="{Binding ToggleLoggedInCommand}"  />
             <Label HorizontalTextAlignment="Center">
               <Label.FormattedText>
                   <FormattedString>
