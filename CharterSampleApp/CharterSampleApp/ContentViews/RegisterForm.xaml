@@ -5,12 +5,19 @@
              x:Class="CharterSampleApp.ContentViews.RegisterForm">
   <ContentView.Content>
       <StackLayout Padding="20">
-          <Label Text="Register To get Started!" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+          <Label Text="Confirm Your Account" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
 
-          <customRenderers:EntryBoxRenderer Placeholder="Enter name" Style="{StaticResource EntryBoxStyle}" />
+          <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
+    <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
+          <Label Text="Or" HorizontalTextAlignment="Center" Margin="15" FontAttributes="Bold" FontSize="Large" />
 
-          <Label HorizontalTextAlignment="Center">
+          <customRenderers:EntryBoxRenderer Placeholder="Enter account number" Style="{StaticResource EntryBoxStyle}" />
+          <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
+          <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
+          <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
+
+            <Label HorizontalTextAlignment="Center">
               <Label.FormattedText>
                   <FormattedString>
                       <Span Text="Already registered?"/>
