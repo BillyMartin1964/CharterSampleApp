@@ -2,7 +2,7 @@
 using CharterSampleApp.Views;
 
 using System;
-
+using CharterSampleApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +10,7 @@ namespace CharterSampleApp
 {
     public partial class App : Application
     {
-
+        public static BillingStatement SelectedBillingStatement;
         public App()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace CharterSampleApp
 
         protected override void OnStart()
         {
+            Routing.RegisterRoute("billingdetailpage", typeof(BillingDetailPage));
             Routing.RegisterRoute("settings", typeof(SettingsPage));
         }
 

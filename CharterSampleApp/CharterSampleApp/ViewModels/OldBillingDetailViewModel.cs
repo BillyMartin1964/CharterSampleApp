@@ -8,8 +8,8 @@ using Xamarin.Forms;
 
 namespace CharterSampleApp.ViewModels
 {
-    [QueryProperty(nameof(ItemId), nameof(ItemId))]
-    public class ItemDetailViewModel : BaseViewModel
+    [QueryProperty(nameof(BillingStatementId), nameof(BillingStatementId))]
+    public class OldBillingDetailViewModel : BaseViewModel
     {
         private string itemId;
         private string text;
@@ -28,7 +28,7 @@ namespace CharterSampleApp.ViewModels
             set => SetProperty(ref description, value);
         }
 
-        public string ItemId
+        public string BillingStatementId
         {
             get
             {

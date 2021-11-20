@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+             x:Class="CharterSampleApp.Views.BillingDetailPage"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <viewModels:BillingDetailViewModel />
+
+    </ContentPage.BindingContext>
+    <StackLayout Spacing="20" Padding="15">
+        <Frame Margin="5" Padding="10">
+            <StackLayout>
+                <Label
+                    Margin="0,0,0,4"
+                    FontAttributes="Bold"
+                    Text="SERVICE FROM" />
+               
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span  Text="Total Service Due by " />
+                            <Span Text="{Binding SelectedBillingStatement.DueDate}"  />
+                            <Span Text="  $" FontAttributes="Bold" FontSize="Large" />
+                            <Span Text="{Binding SelectedBillingStatement.AmountDue}" FontAttributes="Bold" FontSize="Large" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
+        <Frame Margin="5" Padding="10">
+            <StackLayout>
+                <Label
+                    Margin="0,0,0,4"
+                    FontAttributes="Bold"
+                    Text="PREVIOUS ACCOUNT ACTIVITY" />
+
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Remaining Balance:" />
+                            <Span Text=" " />
+                                <Span Text="{Binding SelectedBillingStatement.RemainingBalance}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
+
+    </StackLayout>
+    
+</ContentPage>

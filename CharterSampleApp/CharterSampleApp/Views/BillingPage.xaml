@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
+             xmlns:models="clr-namespace:CharterSampleApp.Models;assembly=CharterSampleApp"
              x:Class="CharterSampleApp.Views.BillingPage">
     <ContentPage.BindingContext>
         <viewModel:BillingViewModel />
@@ -20,10 +21,52 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20">
+            <Label Text="View your billing statements for the last 12 months." />
+
+            <!--<RefreshView x:DataType="viewModel:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">-->
+                <CollectionView x:Name="BillingStatementsCollectionView" 
+                                ItemsSource="{Binding BillingStatements}"
+                                SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
+                                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference BillingStatementsCollectionView}}"
+                                SelectionMode="Single" >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <!--<ViewCell>-->
+                                <Frame
+                                    Margin="0"
+                                    Padding="5"
+                                    BorderColor="Gray"
+                                    CornerRadius="5"
+                                    HasShadow="True"
+                                    IsClippedToBounds="True">
+                               
+                            <StackLayout Margin="5" Padding="2" x:DataType="models:BillingStatement">
+                                <Label Text="{Binding BillingMonth}" 
+                                       LineBreakMode="NoWrap" 
+                                       Style="{DynamicResource ListItemTextStyle}" 
+                                       FontSize="16" />
+                              <!--<StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
+                                        NumberOfTapsRequired="1"
+                                        Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:ItemsViewModel}}, Path=ItemTapped}"		
+                                        CommandParameter="{Binding .}">
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>-->
+                            </StackLayout>
+                               
+                                </Frame>
+                        </DataTemplate>
+
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            <!--</RefreshView>-->
+
+
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

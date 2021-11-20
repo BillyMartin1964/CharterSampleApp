@@ -53,6 +53,20 @@
                     </VisualStateGroupList>
                 </Setter>
             </Style>
+
+            <Style x:Key="ControlGradient"
+                   ApplyToDerivedTypes="True"
+                   TargetType="View">
+                <Setter Property="Background">
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Offset="0.1"
+                                      Color="#ffffff" />
+                        <GradientStop Offset="1.0"
+                                      Color="#b3b3b3" />
+                    </LinearGradientBrush>
+                </Setter>
+            </Style>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -6,12 +6,12 @@ using Xamarin.Forms;
 
 namespace CharterSampleApp.Views
 {
-    public partial class ItemDetailPage : ContentPage
+    public partial class BillingDetailPage : ContentPage
     {
-        public ItemDetailPage()
+        public BillingDetailPage()
         {
             InitializeComponent();
-            BindingContext = new ItemDetailViewModel();
+           // BindingContext = new ItemDetailViewModel();
         }
     }
 }
