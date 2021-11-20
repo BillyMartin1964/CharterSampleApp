@@ -11,8 +11,8 @@
     </Shell.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem 
-            Order="Primary" Command="{Binding GoToSettingsCommand}"
-            Priority="0" >
+            Order="Primary" Command="{Binding GoToNewPageCommand}"
+            CommandParameter="settings"     Priority="0" >
             <ToolbarItem.IconImageSource>
                 <FontImageSource FontFamily="FaIcons" Size="Small"
                                  Glyph="&#xf013;"/>

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Input;
+
 using CharterSampleApp.ContentViews;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -36,6 +38,36 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
+        private Command showRegisterFormCommand;
+
+        public ICommand SignInRegisterFormCommand
+        {
+            get
+            {
+                if (showRegisterFormCommand == null)
+                {
+                    showRegisterFormCommand = new Command(ExecuteShowRegisterFormCommand);
+                }
+
+                return showRegisterFormCommand;
+            }
+        }
+
+        private void ExecuteShowRegisterFormCommand(object obj)
+        {
+            switch (obj)
+            {
+                case "register":
+                    AccountCV = new RegisterForm();
+                    break;
+
+                case "sign in":
+                    AccountCV = new SignInForm();
+                    break;
+            }
+        }
+
+
         private Command toggleLoggedInCommand;
 
         public ICommand ToggleLoggedInCommand
@@ -53,14 +85,14 @@ namespace CharterSampleApp.ViewModels
 
         private void ToggleLoggedIn()
         {
-             UserLoggedIn = !UserLoggedIn;
+            UserLoggedIn = !UserLoggedIn;
 
-             ToggleLoggedInTest();
+            ToggleLoggedInTest();
         }
 
         private void ToggleLoggedInTest()
         {
-          if (UserLoggedIn)
+            if (UserLoggedIn)
             {
                 UserLoggedInMessage = "User Logged In";
                 AccountCV = new AccountContentView();

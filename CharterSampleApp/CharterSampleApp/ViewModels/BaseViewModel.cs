@@ -65,14 +65,15 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-        private ICommand goToSettingsCommand;
-        public ICommand GoToSettingsCommand =>
-            goToSettingsCommand ??
-            (goToSettingsCommand = new Command(async () => await ExecuteGoToSettingsCommand()));
+    
+        private ICommand goToNewPageCommand;
+        public ICommand GoToNewPageCommand =>
+            goToNewPageCommand ??
+            (goToNewPageCommand = new Command<string>(async (x) => await ExecuteGoToNewPageCommand(x)));
 
-        private async Task ExecuteGoToSettingsCommand()
+        private async Task ExecuteGoToNewPageCommand(string page)
         {
-            await Shell.Current.GoToAsync("settings");
+            await Shell.Current.GoToAsync(page);
         }
     }
 }
