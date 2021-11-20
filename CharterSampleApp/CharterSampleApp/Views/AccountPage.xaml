@@ -20,7 +20,7 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="10">
             <ContentView Content="{Binding AccountCV}" />
         </StackLayout>
     </ContentPage.Content>

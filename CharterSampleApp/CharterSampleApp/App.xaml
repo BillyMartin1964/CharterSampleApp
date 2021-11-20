@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.App">
+<Application
+    x:Class="CharterSampleApp.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp">
     <!--
         Define global resources and styles here, that apply to all pages in your app.
     -->
@@ -13,6 +14,7 @@
 
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="AdobeClean" />
+                <Setter Property="TextColor" Value="Black" />
             </Style>
 
             <Style x:Key="TitleBarStyle" TargetType="Label">
@@ -33,7 +35,7 @@
             </Style>
 
             <Style TargetType="Button">
-                <Setter Property="TextColor" Value="White"></Setter>
+                <Setter Property="TextColor" Value="White" />
                 <Setter Property="VisualStateManager.VisualStateGroups">
                     <VisualStateGroupList>
                         <VisualStateGroup x:Name="CommonStates">

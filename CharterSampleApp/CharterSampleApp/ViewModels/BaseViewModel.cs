@@ -15,6 +15,11 @@ namespace CharterSampleApp.ViewModels
     {
         public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
 
+        public BaseViewModel()
+        {
+            CurrentUserAccount = new UserAccount();
+        }
+
         bool isBusy = false;
         public bool IsBusy
         {
@@ -53,6 +58,18 @@ namespace CharterSampleApp.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+        private UserAccount currentUserAccount;
+
+        public UserAccount CurrentUserAccount
+        {
+            get { return currentUserAccount; }
+            set
+            {
+                currentUserAccount = value;
+                OnPropertyChanged();
+            }
+        }
 
         private bool userLoggedIn;
         public bool UserLoggedIn

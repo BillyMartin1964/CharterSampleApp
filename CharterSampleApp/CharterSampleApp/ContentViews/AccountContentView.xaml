@@ -1,10 +1,105 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="CharterSampleApp.ContentViews.AccountContentView">
-  <ContentView.Content>
-      <StackLayout>
-          <Button Text="Sign out" HorizontalOptions="End" HeightRequest="18"  WidthRequest="60" Padding="0"  Margin="10" Command="{Binding ToggleLoggedInCommand}" FontSize="10"  />
-      </StackLayout>
-  </ContentView.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="CharterSampleApp.ContentViews.AccountContentView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentView.Content>
+        <StackLayout>
+            <Button
+                Padding="0"
+                Command="{Binding ToggleLoggedInCommand}"
+                FontSize="10"
+                HeightRequest="18"
+                HorizontalOptions="End"
+                Text="Sign out"
+                WidthRequest="60" 
+                Margin="5,5,5,30"/>
+
+            <Frame Margin="5" Padding="10">
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="Name:" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.FirstName}" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.LastName}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="Account Number:" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="Phone Number:" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.PhoneNumber}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="Email Address:" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.EmailAddress}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>   
+                </StackLayout>
+            </Frame>
+            <Frame Margin="5" Padding="10">
+                <StackLayout>
+                    <Label
+                        Margin="0,0,0,4"
+                        FontAttributes="Bold"
+                        Text="Service Address:" />
+                    <Label Text="{Binding CurrentUserAccount.ServiceAddress.StreetAddress}" />
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.City}" />
+                                <Span Text=", " />
+                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.State}" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.ZipCode}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+            <Frame Margin="5" Padding="10">
+                <StackLayout>
+                    <Label
+                        Margin="0,0,0,4"
+                        FontAttributes="Bold"
+                        Text="Billing Address:" />
+                    <Label Text="{Binding CurrentUserAccount.BillingAddress.StreetAddress}" />
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="{Binding CurrentUserAccount.BillingAddress.City}" />
+                                <Span Text=", " />
+                                <Span Text="{Binding CurrentUserAccount.BillingAddress.State}" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.BillingAddress.ZipCode}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>
