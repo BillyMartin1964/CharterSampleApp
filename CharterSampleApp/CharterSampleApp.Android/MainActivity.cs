@@ -1,13 +1,17 @@
 ﻿using System;
-
+using System.Threading.Tasks;
 using Android.App;
+using Android.Content;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using Xamarin.Forms;
 
 namespace CharterSampleApp.Droid
 {
-    [Activity(Label = "CharterSampleApp",  Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize )]
+    [Activity(Label = "CharterSampleApp", Theme = "@style/MainTheme", MainLauncher = false, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation | ConfigChanges.UiMode | ConfigChanges.ScreenLayout | ConfigChanges.SmallestScreenSize)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -16,6 +20,9 @@ namespace CharterSampleApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            CachedImageRenderer.InitImageViewHandler();
+            var ignore = typeof(SvgCachedImage);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
@@ -24,5 +31,46 @@ namespace CharterSampleApp.Droid
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
+
+
+  
+        //public override void OnBackPressed()
+        //{
+            
+        //    if (App.PromptToConfirmExit)
+        //    {
+        //        return;
+        //    }
+
+        //    RunOnUiThread(
+        //            async () =>
+        //            {
+        //                var isCloseApp = await AlertAsync(this, "Spectrum", "Are you sure you want to close this app?", "Yes", "No");
+
+        //                if (isCloseApp)
+        //                {
+        //                    var activity = (Activity)Forms.Context;
+        //                    activity.FinishAffinity();
+        //                }
+        //            });
+        //}
+
+        public Task<bool> AlertAsync(Context context, string title, string message, string positiveButton, string negativeButton)
+        {
+            var tcs = new TaskCompletionSource<bool>();
+
+            using (var db = new AlertDialog.Builder(context))
+            {
+                db.SetTitle(title);
+                db.SetMessage(message);
+                db.SetPositiveButton(positiveButton, (sender, args) => { tcs.TrySetResult(true); });
+                db.SetNegativeButton(negativeButton, (sender, args) => { tcs.TrySetResult(false); });
+                db.Show();
+            }
+
+            return tcs.Task;
+        }
+
+
     }
 }

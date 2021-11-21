@@ -30,10 +30,17 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" >
+        <!--<ShellContent Title="Home" Route="HomePage" ContentTemplate="{DataTemplate local:HomePage}" >
             <ShellContent.Icon>
             <FontImageSource FontFamily="FaIcons"
                              Glyph="&#xf015;"/>
+            </ShellContent.Icon>
+        </ShellContent>-->
+
+   <ShellContent Title="Billing" Route="BillingPage" ContentTemplate="{DataTemplate local:BillingPage}"  >
+            <ShellContent.Icon>
+            <FontImageSource FontFamily="FaIcons"
+                             Glyph="&#xf1ea;"/>
             </ShellContent.Icon>
         </ShellContent>
 
@@ -44,13 +51,7 @@
             </ShellContent.Icon>
         </ShellContent>
 
-        <ShellContent Title="Billing" Route="BillingPage" ContentTemplate="{DataTemplate local:BillingPage}"  >
-            <ShellContent.Icon>
-            <FontImageSource FontFamily="FaIcons"
-                             Glyph="&#xf1ea;"/>
-            </ShellContent.Icon>
-        </ShellContent>
-
+     
         <ShellContent Title="About" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}"  >
             <ShellContent.Icon>
             <FontImageSource FontFamily="FaIcons"

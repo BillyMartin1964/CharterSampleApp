@@ -4,30 +4,46 @@
              xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
              x:Class="CharterSampleApp.Views.BillingDetailPage"
              Title="{Binding Title}">
-
+    <Shell.TitleView>
+        <Label Text="Billing Details" Style="{StaticResource TitleBarStyle}" />
+    </Shell.TitleView>
     <ContentPage.BindingContext>
         <viewModels:BillingDetailViewModel />
 
     </ContentPage.BindingContext>
     <StackLayout Spacing="20" Padding="15">
+        <Label HorizontalTextAlignment="Center"
+                    FontAttributes="Bold">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span  Text="SERVICE FROM " />
+                    <Span Text="{Binding SelectedBillingStatement.ServiceFrom}"  />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
         <Frame Margin="5" Padding="10">
             <StackLayout>
-                <Label
-                    Margin="0,0,0,4"
-                    FontAttributes="Bold"
-                    Text="SERVICE FROM" />
-               
 
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span  Text="Total Service Due by " />
+                            <Span  Text="Total Due by " />
                             <Span Text="{Binding SelectedBillingStatement.DueDate}"  />
-                            <Span Text="  $" FontAttributes="Bold" FontSize="Large" />
+                            <Span Text="    $" FontAttributes="Bold" FontSize="Large" />
                             <Span Text="{Binding SelectedBillingStatement.AmountDue}" FontAttributes="Bold" FontSize="Large" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span FontAttributes="Bold" Text="Account Number:" />
+                            <Span Text=" " />
+                            <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
             </StackLayout>
         </Frame>
         <Frame Margin="5" Padding="10">
@@ -42,14 +58,48 @@
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="Remaining Balance:" />
-                            <Span Text=" " />
-                                <Span Text="{Binding SelectedBillingStatement.RemainingBalance}" />
+                            <Span Text="  $" />
+                            <Span Text="{Binding SelectedBillingStatement.RemainingBalance}" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
             </StackLayout>
         </Frame>
 
+        <Frame Margin="5" Padding="10">
+            <StackLayout>
+                <Label
+                    Margin="0,0,0,4"
+                    FontAttributes="Bold"
+                    Text="NEW CHARGES" />
+
+
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Spectrum Internet:" />
+                            <Span Text="  $" />
+                            <Span Text="{Binding SelectedBillingStatement.NewCharges}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
+
+        <Frame Margin="5" Padding="10">
+            <StackLayout>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span  Text="Total Due by " />
+                            <Span Text="{Binding SelectedBillingStatement.DueDate}"  />
+                            <Span Text="    $" FontAttributes="Bold" FontSize="Large" />
+                            <Span Text="{Binding SelectedBillingStatement.AmountDue}" FontAttributes="Bold" FontSize="Large" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </StackLayout>
+        </Frame>
     </StackLayout>
-    
+
 </ContentPage>

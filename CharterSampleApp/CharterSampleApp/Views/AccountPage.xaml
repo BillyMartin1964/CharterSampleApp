@@ -1,27 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
-             x:Class="CharterSampleApp.Views.AccountPage">
+<ContentPage
+    x:Class="CharterSampleApp.Views.AccountPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    xmlns:contentviews="clr-namespace:CharterSampleApp.ContentViews;assembly=CharterSampleApp">
     <ContentPage.BindingContext>
         <viewModel:AccountViewModel />
     </ContentPage.BindingContext>
     <Shell.TitleView>
-        <Label Text="Account" Style="{StaticResource TitleBarStyle}" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="Account" />
     </Shell.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            Order="Primary" Command="{Binding GoToNewPageCommand}"
-            CommandParameter="settings"     Priority="0" >
+        <ToolbarItem
+            Command="{Binding GoToNewPageCommand}"
+            CommandParameter="settings"
+            Order="Primary"
+            Priority="0">
             <ToolbarItem.IconImageSource>
-                <FontImageSource FontFamily="FaIcons" Size="Small"
-                                 Glyph="&#xf013;"/>
+                <FontImageSource
+                    FontFamily="FaIcons"
+                    Glyph="&#xf013;"
+                    Size="Small" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="10">
-            <ContentView Content="{Binding AccountCV}" />
+            <contentviews:AccountContentView />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -11,6 +11,7 @@
         <ResourceDictionary>
             <Color x:Key="Primary">#0076BC</Color>
             <Color x:Key="GrayText">Gray</Color>
+            <Color x:Key="AppBackgroundColor">White</Color>
 
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="AdobeClean" />
@@ -54,15 +55,14 @@
                 </Setter>
             </Style>
 
-            <Style x:Key="ControlGradient"
-                   ApplyToDerivedTypes="True"
-                   TargetType="View">
+            <Style
+                x:Key="ControlGradient"
+                ApplyToDerivedTypes="True"
+                TargetType="View">
                 <Setter Property="Background">
                     <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Offset="0.1"
-                                      Color="#ffffff" />
-                        <GradientStop Offset="1.0"
-                                      Color="#b3b3b3" />
+                        <GradientStop Offset="0.1" Color="#ffffff" />
+                        <GradientStop Offset="1.0" Color="#b3b3b3" />
                     </LinearGradientBrush>
                 </Setter>
             </Style>

@@ -7,6 +7,8 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using CharterSampleApp.ContentViews;
+using CharterSampleApp.Views;
 using Xamarin.Forms;
 
 namespace CharterSampleApp.ViewModels
@@ -18,6 +20,7 @@ namespace CharterSampleApp.ViewModels
         public BaseViewModel()
         {
             CurrentUserAccount = new UserAccount();
+
         }
 
         bool isBusy = false;
@@ -78,11 +81,11 @@ namespace CharterSampleApp.ViewModels
             set
             {
                 userLoggedIn = value;
+                App.UserSignedIn = value;
                 OnPropertyChanged();
             }
         }
 
-    
         private ICommand goToNewPageCommand;
         public ICommand GoToNewPageCommand =>
             goToNewPageCommand ??
@@ -91,6 +94,81 @@ namespace CharterSampleApp.ViewModels
         private async Task ExecuteGoToNewPageCommand(string page)
         {
             await Shell.Current.GoToAsync(page);
+        }
+
+
+        private ICommand registerUserCommand;
+        public ICommand RegisterUserCommand =>
+            registerUserCommand ??
+            (registerUserCommand = new Command(ExecuteRegisterUserCommand));
+
+        private void ExecuteRegisterUserCommand()
+        {
+            // Save Registered User
+            
+            AuthenticationCV = new SignInForm();
+        }
+
+        private ContentView authenticationCV;
+        public ContentView AuthenticationCV
+        {
+            get { return authenticationCV; }
+            set
+            {
+                authenticationCV = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand signInCommand;
+        public ICommand SignInCommand =>
+            signInCommand ??
+            (signInCommand = new Command(ExecuteSignInCommand));
+
+        private void ExecuteSignInCommand()
+        {
+
+            UserLoggedIn = true;
+
+            App.UserSignedIn = UserLoggedIn;
+
+            Application.Current.MainPage = new AppShell();
+
+        }
+
+
+
+
+
+        private string userLoggedInMessage;
+        public string UserLoggedInMessage
+        {
+            get { return userLoggedInMessage; }
+            set
+            {
+                userLoggedInMessage = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand navigateForSignInCommand;
+        public ICommand NavigateForSignInCommand =>
+            navigateForSignInCommand ??
+            (navigateForSignInCommand = new Command(async () => await ExecuteNavigateForSignInCommand()));
+
+        private async Task ExecuteNavigateForSignInCommand()
+        {
+            if (App.UserSignedIn)
+            {
+                App.UserSignedIn = false;
+
+                await App.Current.MainPage.Navigation.PushModalAsync(new HomePage(), true);
+            }
+            else
+            {
+                await App.Current.MainPage.Navigation.PushModalAsync(new AuthenticationPage(), true);
+            }
+
         }
     }
 }

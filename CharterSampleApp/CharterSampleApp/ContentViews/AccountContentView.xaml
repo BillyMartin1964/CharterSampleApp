@@ -6,14 +6,14 @@
     <ContentView.Content>
         <StackLayout>
             <Button
+                Margin="5,5,5,30"
                 Padding="0"
-                Command="{Binding ToggleLoggedInCommand}"
+                Command="{Binding NavigateForSignInCommand}"
                 FontSize="10"
                 HeightRequest="18"
                 HorizontalOptions="End"
                 Text="Sign out"
-                WidthRequest="60" 
-                Margin="5,5,5,30"/>
+                WidthRequest="60" />
 
             <Frame Margin="5" Padding="10">
                 <StackLayout>
@@ -57,7 +57,7 @@
                                 <Span Text="{Binding CurrentUserAccount.EmailAddress}" />
                             </FormattedString>
                         </Label.FormattedText>
-                    </Label>   
+                    </Label>
                 </StackLayout>
             </Frame>
             <Frame Margin="5" Padding="10">

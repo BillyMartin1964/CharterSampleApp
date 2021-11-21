@@ -7,14 +7,23 @@
 
   <ItemGroup>
     <None Remove="UserInterface\Fonts\Fa-Solid-900.otf" />
+    <None Remove="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
+    <None Remove="UserInterface\Images\SVGs\up-to-1gbps.svg" />
+    <None Remove="UserInterface\Images\SVGs\up-to-200mbps.svg" />
+    <None Remove="UserInterface\Images\SVGs\up-to-400mbps.svg" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="UserInterface\Fonts\Fa-Solid-900.otf" />
+    <EmbeddedResource Include="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
+    <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-1gbps.svg" />
+    <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-200mbps.svg" />
+    <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-400mbps.svg" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />  
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
 
@@ -27,6 +36,9 @@
     </Compile>
     <Compile Update="Views\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\AuthenticationPage.xaml.cs">
+      <DependentUpon>AuthenticationPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -50,6 +62,9 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\AuthenticationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

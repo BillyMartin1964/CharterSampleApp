@@ -2,21 +2,26 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.ContentViews.RegisterForm">
+             x:Class="CharterSampleApp.ContentViews.RegisterForm"
+             BackgroundColor="Transparent" >
   <ContentView.Content>
       <StackLayout Padding="20">
-          <Label Text="Confirm Your Account" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+          <Label Text="Confirm Your Account" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" Margin="0, 20"/>
 
-          <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
-          <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
-    <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
-          <Label Text="Or" HorizontalTextAlignment="Center" Margin="15" FontAttributes="Bold" FontSize="Large" />
-
-          <customRenderers:EntryBoxRenderer Placeholder="Enter account number" Style="{StaticResource EntryBoxStyle}" />
+       <customRenderers:EntryBoxRenderer Placeholder="Enter account number" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
-            <Button Text="Register" Margin="20,2"  Command="{Binding ToggleLoggedInCommand}"  />
+           
+          <Grid ColumnDefinitions="*,*" ColumnSpacing="5"    Margin="20,10, 20, 5">
+              <Button Grid.Column="0"
+                      Command="{Binding RegisterUserCommand}"
+                      Text="Register" />
+              <Button Grid.Column="1"
+                      Command="{Binding SignInCommand}"
+                      Text="Cancel" />
+          </Grid>
+
             <Label HorizontalTextAlignment="Center">
               <Label.FormattedText>
                   <FormattedString>

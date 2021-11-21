@@ -1,8 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
-             x:Class="CharterSampleApp.Views.HomePage">
+<ContentPage
+    x:Class="CharterSampleApp.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    xmlns:converter="clr-namespace:CharterSampleApp.Converters;assembly=CharterSampleApp"
+    xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    BackgroundColor="{StaticResource AppBackgroundColor}" >
     <ContentPage.BindingContext>
         <viewModel:HomeViewModel />
     </ContentPage.BindingContext>
@@ -12,28 +17,109 @@
                 <FormattedString>
                     <Span Text="Spectrum" />
                     <Span Text="" />
-                    <Span Text="&#xf0da;" FontFamily="FaIcons" />
+                    <Span FontFamily="FaIcons" Text="&#xf0da;" />
                 </FormattedString>
             </Label.FormattedText>
         </Label>
 
     </Shell.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            Order="Primary" Command="{Binding GoToNewPageCommand}"
-                CommandParameter="settings"     Priority="0" >
-        <ToolbarItem.IconImageSource>
-            <FontImageSource FontFamily="FaIcons" Size="Small"
-                             Glyph="&#xf013;"/>
-        </ToolbarItem.IconImageSource>
-            </ToolbarItem>
+        <ToolbarItem
+            Command="{Binding GoToNewPageCommand}"
+            CommandParameter="settings"
+            Order="Primary"
+            Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource
+                    FontFamily="FaIcons"
+                    Glyph="&#xf013;"
+                    Size="Small" />
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout >
+            <Label
+                Margin="20"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Welcome to Spectrum" TextColor="{StaticResource Primary}" />
+                        <Span Text="" />
+                        <Span
+                            FontFamily="FaIcons"
+                            FontSize="18"
+                            Text="&#xf0da;"
+                            TextColor="Gray" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                Text="Upgrade Your Internet Speed"
+                TextColor="{StaticResource Primary}"
+                VerticalOptions="Center" />
+            <Label
+                FontSize="Micro"
+                HorizontalOptions="CenterAndExpand"
+                Text="Get the freedom to do anything, on more devices. Wireless speeds may vary." />
+            <Grid
+                Margin="20"
+                ColumnDefinitions="*,*,*"
+                RowDefinitions="*,30">
+
+                <svg:SvgCachedImage
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-200mbps.svg"
+                    WidthRequest="100" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalTextAlignment="Center"
+                    Text="INTERNET" />
+
+                <svg:SvgCachedImage
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-400mbps.svg"
+                    WidthRequest="100" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalTextAlignment="Center"
+                    Text="INTERNET ULTRA" />
+
+                <svg:SvgCachedImage
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-1gbps.svg"
+                    WidthRequest="100" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    HorizontalTextAlignment="Center"
+                    Text="INTERNET GIG" />
+
+            </Grid>
+
+            <Image Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"  Margin="0,30" Aspect="AspectFit"  WidthRequest="800"/>
+
+            <Button x:Name="SignInButton" Text="Sign In" Margin="30" Command="{Binding NavigateForSignInCommand}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

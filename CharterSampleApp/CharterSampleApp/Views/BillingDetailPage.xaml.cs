@@ -1,6 +1,7 @@
 ﻿using CharterSampleApp.ViewModels;
 
 using System.ComponentModel;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -11,7 +12,15 @@ namespace CharterSampleApp.Views
         public BillingDetailPage()
         {
             InitializeComponent();
-           // BindingContext = new ItemDetailViewModel();
         }
+
+       
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    Navigation.PopAsync();
+
+        //    return true;
+        //}
     }
 }

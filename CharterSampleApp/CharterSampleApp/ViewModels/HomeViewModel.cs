@@ -10,7 +10,7 @@ namespace CharterSampleApp.ViewModels
     {
         public HomeViewModel()
         {
-        
+         
         }
         
     }

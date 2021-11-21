@@ -1,72 +1,129 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
-             xmlns:models="clr-namespace:CharterSampleApp.Models;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.Views.BillingPage">
+<ContentPage
+    x:Class="CharterSampleApp.Views.BillingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:behavior="clr-namespace:CharterSampleApp.Behaviors;assembly=CharterSampleApp"
+    xmlns:models="clr-namespace:CharterSampleApp.Models;assembly=CharterSampleApp"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp">
     <ContentPage.BindingContext>
         <viewModel:BillingViewModel />
     </ContentPage.BindingContext>
     <Shell.TitleView>
-        <Label Text="Billing" Style="{StaticResource TitleBarStyle}" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="Billing" />
     </Shell.TitleView>
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-            Order="Primary" Command="{Binding GoToNewPageCommand}"
-            CommandParameter="settings"     Priority="0" >
+        <ToolbarItem
+            Command="{Binding GoToNewPageCommand}"
+            CommandParameter="settings"
+            Order="Primary"
+            Priority="0">
             <ToolbarItem.IconImageSource>
-                <FontImageSource FontFamily="FaIcons" Size="Small"
-                                 Glyph="&#xf013;"/>
+                <FontImageSource
+                    FontFamily="FaIcons"
+                    Glyph="&#xf013;"
+                    Size="Small" />
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Label Text="View your billing statements for the last 12 months." />
+            <Button
+                Margin="5,5,5,30"
+                Padding="0"
+                Command="{Binding NavigateForSignInCommand}"
+                FontSize="10"
+                HeightRequest="18"
+                HorizontalOptions="End"
+                Text="Sign out"
+                WidthRequest="60" />
+            <Label Text="View your billing statements for the last 12 months." HorizontalTextAlignment="Center" FontAttributes="Bold"/>
 
+            <Grid ColumnDefinitions="*, 30,30" Margin="0,10">
+                <SearchBar
+                    x:Name="billingSearchBar"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Text="{Binding SearchString}">
+                    <SearchBar.Behaviors>
+                        <behavior:EventToCommandBehavior
+                            Command="{Binding SearchCollectionViewCommand}"
+                            CommandParameter="{Binding Text, Source={x:Reference billingSearchBar}}"
+                            EventName="TextChanged" />
+                    </SearchBar.Behaviors>
+                </SearchBar>
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    
+                    FontSize="18"
+                    Text="&#xf0b0;"
+                    FontFamily="FaIcons"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding FilterBillingStatementsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>  
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    FontSize="18"
+                    Text="{Binding SortIcon}"
+                    FontFamily="FaIcons"
+                    VerticalTextAlignment="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SortBillingStatementsCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
             <!--<RefreshView x:DataType="viewModel:ItemsViewModel" Command="{Binding LoadItemsCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">-->
-                <CollectionView x:Name="BillingStatementsCollectionView" 
-                                ItemsSource="{Binding BillingStatements}"
-                                SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
-                                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference BillingStatementsCollectionView}}"
-                                SelectionMode="Single" >
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical" />
-                    </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate >
-                            <DataTemplate>
-                                <!--<ViewCell>-->
-                                <Frame
-                                    Margin="0"
-                                    Padding="5"
-                                    BorderColor="Gray"
-                                    CornerRadius="5"
-                                    HasShadow="True"
-                                    IsClippedToBounds="True">
-                               
-                            <StackLayout Margin="5" Padding="2" x:DataType="models:BillingStatement">
-                                <Label Text="{Binding BillingMonth}" 
-                                       LineBreakMode="NoWrap" 
-                                       Style="{DynamicResource ListItemTextStyle}" 
-                                       FontSize="16" />
-                              <!--<StackLayout.GestureRecognizers>
-                                    <TapGestureRecognizer 
+            <CollectionView
+                x:Name="BillingStatementsCollectionView"
+                ItemsSource="{Binding DisplayedBillingStatements}"
+                SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
+                SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference BillingStatementsCollectionView}}"
+                SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="6" Orientation="Vertical" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ViewCell>-->
+                        <Frame
+                            Margin="0"
+                            Padding="2"
+                            BorderColor="LightGray"
+                            CornerRadius="5"
+                            HasShadow="True"
+                            IsClippedToBounds="True">
+
+                            <StackLayout
+                                Margin="5"
+                                Padding="2"
+                                x:DataType="models:BillingStatement">
+                                <Label
+                                    FontSize="16"
+                                    LineBreakMode="NoWrap"
+                                    Style="{DynamicResource ListItemTextStyle}"
+                                    Text="{Binding BillingMonth}" />
+                                <!--<StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer
                                         NumberOfTapsRequired="1"
                                         Command="{Binding Source={RelativeSource AncestorType={x:Type viewModel:ItemsViewModel}}, Path=ItemTapped}"		
                                         CommandParameter="{Binding .}">
                                     </TapGestureRecognizer>
                                 </StackLayout.GestureRecognizers>-->
                             </StackLayout>
-                               
-                                </Frame>
-                        </DataTemplate>
 
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
+                        </Frame>
+                    </DataTemplate>
+
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <!--</RefreshView>-->
 
 
-           
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

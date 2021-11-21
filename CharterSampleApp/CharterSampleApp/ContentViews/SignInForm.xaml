@@ -1,29 +1,48 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.ContentViews.SignInForm">
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="CharterSampleApp.ContentViews.SignInForm"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
+    BackgroundColor="Transparent">
     <ContentView.Content>
         <StackLayout Padding="20">
-            <Label Text="Sign In To get Started!" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large"/>
+            <Label
+                Margin="0,20"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="Sign In To get Started!" />
 
-            <customRenderers:EntryBoxRenderer  Placeholder="Enter name" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="Enter name" Style="{StaticResource EntryBoxStyle}" />
             <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
-            <Button Text="Sign In" Margin="20,2"  Command="{Binding ToggleLoggedInCommand}"  />
+            <Grid
+                Margin="20,2"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="5">
+                <Button
+                    Grid.Column="0"
+                    Command="{Binding SignInCommand}"
+                    Text="Sign In" />
+                <Button
+                    Grid.Column="1"
+                    Command="{Binding SignInCommand}"
+                    Text="Cancel" />
+            </Grid>
             <Label HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Not registered?"/>
+                        <Span Text="Not registered?" />
                         <Span Text=" " />
                         <Span Text="Register" TextColor="{StaticResource Primary}">
-                         <Span.GestureRecognizers>
+                            <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SignInRegisterFormCommand}" CommandParameter="register" />
-                         </Span.GestureRecognizers>
-                        </Span>  
+                            </Span.GestureRecognizers>
+                        </Span>
                     </FormattedString>
                 </Label.FormattedText>
             </Label>
-   
+
         </StackLayout>
     </ContentView.Content>
 </ContentView>
