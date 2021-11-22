@@ -5,7 +5,7 @@ using CharterSampleApp.Effects;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ResolutionGroupName("SiteSculptors")]
+[assembly: ResolutionGroupName("BillyMartin")]
 [assembly: ExportEffect(typeof(LabelShadowEffect), "LabelShadowEffect")]
 namespace CharterSampleApp.Droid.Effects
 {

@@ -5,7 +5,7 @@ namespace CharterSampleApp.Effects
 {
     public class ShadowEffect : RoutingEffect
     {
-        public ShadowEffect() : base("SiteSculptors.LabelShadowEffect")
+        public ShadowEffect() : base("BillyMartin.LabelShadowEffect")
         {
         }
 
