@@ -6,6 +6,7 @@ using System.Windows.Input;
 
 using CharterSampleApp.ContentViews;
 using CharterSampleApp.Extensions;
+using CharterSampleApp.Helpers;
 using CharterSampleApp.Models;
 using CharterSampleApp.Services;
 
@@ -30,6 +31,8 @@ namespace CharterSampleApp.ViewModels
 
         async Task ExecuteGetProfilePicCommand()
         {
+            string imageFolder = DependencyService.Get<IFileHelper>().GetImagesFolder("CharterSampleApp");
+
             Stream stream = await DependencyService.Get<IProfilePicPickerService>().GetImageStreamAsync();
 
             if (stream != null)

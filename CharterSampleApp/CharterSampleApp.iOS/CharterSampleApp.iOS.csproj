@@ -146,5 +146,7 @@
       <Name>CharterSampleApp</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Effects\" />
+  </ItemGroup>
 </Project>
