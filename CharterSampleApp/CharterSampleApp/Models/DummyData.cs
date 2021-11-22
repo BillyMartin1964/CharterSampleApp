@@ -27,5 +27,31 @@ namespace CharterSampleApp.Models
                 new BillingStatement() { BillingStatementId = 14, ServiceFrom = "12/1 - 12/31",  BillingMonth = "December 1, 2021", DueDate = "January 1, 2022", AmountDue = 89.99m, RemainingBalance = 31.99m, NewCharges = 69.99m}
             };
         }
+
+        public static UserAccount GetUserAccount()
+        {
+            return new UserAccount
+            {
+                AccountNumber = "123456789",
+                FirstName = "Billy",
+                LastName = "Martin",
+                PhoneNumber = "(810) 640-5877",
+                EmailAddress = "william.martin1964@outlook.com",
+                ServiceAddress = new Address()
+                {
+                    StreetAddress = "284375 Main St.",
+                    City = "AnyTown",
+                    State = "Co",
+                    ZipCode = "55555"
+                },
+                BillingAddress = new Address()
+                {
+                    StreetAddress = "56789 Cross St.",
+                    City = "AnyTown",
+                    State = "Co",
+                    ZipCode = "55555"
+                }
+            };
+        }
     }
 }
