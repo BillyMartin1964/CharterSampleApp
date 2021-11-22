@@ -37,6 +37,7 @@ namespace CharterSampleApp.Models
                 LastName = "Martin",
                 PhoneNumber = "(810) 640-5877",
                 EmailAddress = "william.martin1964@outlook.com",
+                Password = "Password",
                 ServiceAddress = new Address()
                 {
                     StreetAddress = "284375 Main St.",

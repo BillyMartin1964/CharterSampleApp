@@ -14,5 +14,13 @@ namespace CharterSampleApp.CharterRestApi.DbContext
         public DbSet<UserAccount> CharterUserAccount { get; set; } = null!;
         public DbSet<Address> UserAddress { get; set; } = null!;
         public DbSet<BillingStatement> UserBillingStatement { get; set; } = null!;
+
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    if (!optionsBuilder.IsConfigured)
+        //    {
+        //        optionsBuilder.UseSqlServer(Keys.CharterDbConnectionString);
+        //    }
+        //}
     }
 }

@@ -16,7 +16,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 builder.Services.AddDbContext<CharterContext>(opt =>
-    opt.UseInMemoryDatabase("CharterDb"));
+    opt.UseSqlServer(Keys.CharterDbConnectionString));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -42,4 +42,3 @@ app.Run();
 
 app.MapControllers();
 
-app.Run();
