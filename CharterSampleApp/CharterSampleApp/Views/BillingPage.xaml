@@ -83,6 +83,7 @@
                 x:Name="BillingStatementsCollectionView"
                 ItemsSource="{Binding DisplayedBillingStatements}"
                 SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
+                SelectedItem="{Binding SelectedItem}"
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference BillingStatementsCollectionView}}"
                 SelectionMode="Single">
                 <CollectionView.ItemsLayout>

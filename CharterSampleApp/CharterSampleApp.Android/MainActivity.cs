@@ -23,7 +23,7 @@ namespace CharterSampleApp.Droid
         {
             base.OnCreate(savedInstanceState);
 
-            DependencyService.Register<IProfilePicPickerService, ProfilePicPickerService>();
+         
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
