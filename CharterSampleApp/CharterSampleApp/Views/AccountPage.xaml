@@ -3,8 +3,8 @@
     x:Class="CharterSampleApp.Views.AccountPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
-    xmlns:contentviews="clr-namespace:CharterSampleApp.ContentViews;assembly=CharterSampleApp">
+    xmlns:contentviews="clr-namespace:CharterSampleApp.ContentViews;assembly=CharterSampleApp"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp">
     <ContentPage.BindingContext>
         <viewModel:AccountViewModel />
     </ContentPage.BindingContext>

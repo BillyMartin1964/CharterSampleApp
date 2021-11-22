@@ -3,9 +3,9 @@
     x:Class="CharterSampleApp.Views.AboutPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
-    xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
     xmlns:effects="clr-namespace:CharterSampleApp.Effects;assembly=CharterSampleApp"
+    xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
     Title="{Binding Title}">
 
     <Shell.TitleView>
@@ -37,32 +37,40 @@
     </ContentPage.ToolbarItems>
     <StackLayout Margin="20">
 
-        <Label Text="The New Spectrum App!" HorizontalTextAlignment="Center" FontSize="28" FontAttributes="Bold" TextColor="{StaticResource Primary}" Margin="0, 20" >
-        <Label.Effects>
-            <effects:ShadowEffect
-                DistanceX="5"
-                DistanceY="5"
-                FontAttributes="Bold"
-                HorizontalOptions="CenterAndExpand"
-                HorizontalTextAlignment="Center"
-                Opacity="1"
-                Radius="2"
-                VerticalOptions="CenterAndExpand"
-                VerticalTextAlignment="Center"
-                Color="Navy">
-                <effects:ShadowEffect.FontSize>
-                    <OnPlatform x:TypeArguments="x:Double">
+        <Label
+            Margin="0,20"
+            FontAttributes="Bold"
+            FontSize="28"
+            HorizontalTextAlignment="Center"
+            Text="The New Spectrum App!"
+            TextColor="{StaticResource Primary}">
+            <Label.Effects>
+                <effects:ShadowEffect
+                    DistanceX="5"
+                    DistanceY="5"
+                    FontAttributes="Bold"
+                    HorizontalOptions="CenterAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Opacity="1"
+                    Radius="2"
+                    VerticalOptions="CenterAndExpand"
+                    VerticalTextAlignment="Center"
+                    Color="Navy">
+                    <effects:ShadowEffect.FontSize>
+                        <OnPlatform x:TypeArguments="x:Double">
                             <On Platform="Android">28</On>
                             <On Platform="iOS">28</On>
-                    </OnPlatform>
-                </effects:ShadowEffect.FontSize>
-            </effects:ShadowEffect>
-        </Label.Effects>
+                        </OnPlatform>
+                    </effects:ShadowEffect.FontSize>
+                </effects:ShadowEffect>
+            </Label.Effects>
         </Label>
-        <Image HorizontalOptions="Center" WidthRequest="300"
+        <Image
             Margin="0,20"
             Aspect="AspectFit"
-            Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.GalaxyPhone.png}" />
+            HorizontalOptions="Center"
+            Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.GalaxyPhone.png}"
+            WidthRequest="300" />
         <Label Text="{Binding AppVersion}" />
         <Label Text="Available on Android and iPhone" />
     </StackLayout>

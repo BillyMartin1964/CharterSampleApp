@@ -3,8 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
              Shell.PresentationMode="ModalAnimated"
-             x:Class="CharterSampleApp.Views.AuthenticationPage"
-             BackgroundColor="{StaticResource AppBackgroundColor}" >
+             x:Class="CharterSampleApp.Views.AuthenticationPage" >
 
     <ContentPage.BindingContext>
         <viewModels:AuthenticationViewModel />
