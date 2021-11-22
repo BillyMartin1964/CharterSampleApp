@@ -58,6 +58,8 @@
                         Command="{Binding OpenWebCommand}"
                         BackgroundColor="{StaticResource Primary}"
                         TextColor="White" />
+
+                <Label Text="{Binding AppVersion}" />
             </StackLayout>
         </ScrollView>
     </Grid>

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Input;
-
+using CharterSampleApp.Interfaces;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -10,9 +10,17 @@ namespace CharterSampleApp.ViewModels
     {
         public SettingsViewModel()
         {
-            OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://aka.ms/xamarin-quickstart"));
+            
         }
 
-        public ICommand OpenWebCommand { get; }
+        private ICommand openDeviceSettings;
+        public ICommand OpenDeviceSettings =>
+            openDeviceSettings ??
+            (openDeviceSettings = new Command(ExecuteOpenDeviceSettings));
+
+        private void ExecuteOpenDeviceSettings(object obj)
+        {
+           DependencyService.Get<ITakeUserToAppSettings>().GoToAppSettings();
+        }
     }
 }

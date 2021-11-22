@@ -8,6 +8,7 @@
   <ItemGroup>
     <None Remove="UserInterface\Fonts\Fa-Solid-900.otf" />
     <None Remove="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
+    <None Remove="UserInterface\Images\PNGs\unknownperson.png" />
     <None Remove="UserInterface\Images\SVGs\up-to-1gbps.svg" />
     <None Remove="UserInterface\Images\SVGs\up-to-200mbps.svg" />
     <None Remove="UserInterface\Images\SVGs\up-to-400mbps.svg" />
@@ -16,6 +17,7 @@
   <ItemGroup>
     <EmbeddedResource Include="UserInterface\Fonts\Fa-Solid-900.otf" />
     <EmbeddedResource Include="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
+    <EmbeddedResource Include="UserInterface\Images\PNGs\unknownperson.png" />
     <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-1gbps.svg" />
     <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-200mbps.svg" />
     <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-400mbps.svg" />

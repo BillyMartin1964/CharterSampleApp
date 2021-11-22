@@ -11,9 +11,8 @@
     </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Settings!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+           
+            <Button Text="Open Device Settings For This App" Command="{Binding OpenDeviceSettings}" Margin="20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -3,11 +3,11 @@
     x:Class="CharterSampleApp.Views.HomePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     xmlns:converter="clr-namespace:CharterSampleApp.Converters;assembly=CharterSampleApp"
     xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
-    BackgroundColor="{StaticResource AppBackgroundColor}" >
+    xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModel:HomeViewModel />
     </ContentPage.BindingContext>
@@ -43,7 +43,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout >
+        <StackLayout>
             <Label
                 Margin="20"
                 FontAttributes="Bold"
@@ -117,9 +117,19 @@
 
             </Grid>
 
-            <Image Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"  Margin="0,30" Aspect="AspectFit"  WidthRequest="800"/>
+            <Image
+                Margin="0,30"
+                Aspect="AspectFit"
+                Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"
+                WidthRequest="800" />
 
-            <Button x:Name="SignInButton" Text="Sign In" Margin="30" Command="{Binding NavigateForSignInCommand}" />
+            <Label HorizontalTextAlignment="Center" Text="{Binding AvailableInText}" />
+
+            <Button
+                x:Name="SignInButton"
+                Margin="30"
+                Command="{Binding NavigateForSignInCommand}"
+                Text="Sign In" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
