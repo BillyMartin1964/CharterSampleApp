@@ -72,7 +72,6 @@
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\GetVersionOnAndroidImplementation.cs" />
-    <Compile Include="Services\ProfilePicPickerService.cs" />
     <Compile Include="Services\TakeUserToAppSettings.cs" />
     <Compile Include="SplashScreenActivity.cs" />
   </ItemGroup>

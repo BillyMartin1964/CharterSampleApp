@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 using CharterSampleApp.ContentViews;
-
+using CharterSampleApp.Views;
 using Xamarin.Forms;
 
 namespace CharterSampleApp.ViewModels
@@ -36,21 +37,17 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-      
+        private ICommand cancelCommand;
 
-        //public void ToggleLoggedInTest()
-        //{
-        //    if (UserLoggedIn)
-        //    {
-        //        UserLoggedInMessage = "User Logged In";
-        //        AccountCV = new AccountContentView();
-        //    }
-        //    else
-        //    {
-        //        UserLoggedInMessage = "User Logged Out";
+        public ICommand CancelCommand =>
+            cancelCommand ??
+            (cancelCommand = new Command(async () => await ExecuteCancelCommand()));
 
-        //        AccountCV = new SignInForm();
-        //    }
-        //}
+        private async Task ExecuteCancelCommand()
+        {
+            App.UserSignedIn = false;
+
+            await App.Current.MainPage.Navigation.PushModalAsync(new HomePage(), true);
+        }
     }
 }

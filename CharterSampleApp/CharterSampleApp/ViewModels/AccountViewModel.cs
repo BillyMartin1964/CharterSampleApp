@@ -20,37 +20,8 @@ namespace CharterSampleApp.ViewModels
 
         public AccountViewModel()
         {
-          // ProfilePic = "unknownperson.png";
-           ProfilePic =  ImageSource.FromResource("CharterSampleApp.UserInterface.Images.PNGs.unknownperson.png");
+         
         }
 
-        private ICommand getProfilePicCommand;
-        public ICommand GetProfilePicCommand =>
-            getProfilePicCommand ??
-            (getProfilePicCommand = new Command(async () => await ExecuteGetProfilePicCommand()));
-
-        async Task ExecuteGetProfilePicCommand()
-        {
-            string imageFolder = DependencyService.Get<IFileHelper>().GetImagesFolder("CharterSampleApp");
-
-            Stream stream = await DependencyService.Get<IProfilePicPickerService>().GetImageStreamAsync();
-
-            if (stream != null)
-            {
-                ProfilePic = ImageSource.FromStream(() => stream);
-            }
-
-        }
-
-        private ImageSource profilePic;
-        public ImageSource ProfilePic
-        {
-            get { return profilePic; }
-            set
-            {
-                profilePic = value;
-                OnPropertyChanged();
-            }
-        }
     }
 }

@@ -20,30 +20,7 @@
                 HorizontalOptions="End"
                 Text="Sign out"
                 WidthRequest="60" />
-            <Frame
-                Margin="5"
-                Padding="10"
-                HeightRequest="100"
-                HorizontalOptions="Center"
-                WidthRequest="100">
-                <StackLayout
-                    HeightRequest="100"
-                    HorizontalOptions="Center"
-                    WidthRequest="100">
-                    <Image
-                        HeightRequest="100"
-                        Source="{Binding ProfilePic}"
-                        WidthRequest="100">
-                        <!--   <Image
-                        HeightRequest="100"
-                        Source="{Binding ProfilePic, Converter={StaticResource ImageConverter}, ConverterParameter='CharterSampleApp.UserInterface.Images.PNGs'}"
-                        WidthRequest="100" >-->
-                        <Image.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding GetProfilePicCommand}" />
-                        </Image.GestureRecognizers>
-                    </Image>
-                </StackLayout>
-            </Frame>
+       
 
             <Frame Margin="5" Padding="10">
                 <StackLayout>

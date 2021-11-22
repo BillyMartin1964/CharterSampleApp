@@ -26,7 +26,7 @@
                     Text="Sign In" />
                 <Button
                     Grid.Column="1"
-                    Command="{Binding SignInCommand}"
+                    Command="{Binding CancelCommand}"
                     Text="Cancel" />
             </Grid>
             <Label HorizontalTextAlignment="Center">
