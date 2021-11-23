@@ -14,7 +14,6 @@ namespace CharterSampleApp
         {
             InitializeComponent();
             Routing.RegisterRoute(nameof(BillingDetailPage), typeof(BillingDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
         }
 
         //protected override bool OnBackButtonPressed()

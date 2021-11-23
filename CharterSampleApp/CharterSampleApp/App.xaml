@@ -13,6 +13,10 @@
             <Color x:Key="GrayText">Gray</Color>
             <Color x:Key="AppBackgroundColor">White</Color>
 
+            <Style TargetType="Page">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="AdobeClean" />
                 <Setter Property="TextColor" Value="Black" />

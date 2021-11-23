@@ -10,19 +10,15 @@
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
-        <StackLayout>
-            <Button
-                Margin="5,5,5,30"
-                Padding="0"
-                Command="{Binding NavigateForSignInCommand}"
-                FontSize="10"
-                HeightRequest="18"
-                HorizontalOptions="End"
-                Text="Sign out"
-                WidthRequest="60" />
-       
-
-            <Frame Margin="5" Padding="10">
+        <Grid RowDefinitions="2*,*,*" RowSpacing="4">
+           
+            <Frame
+                Grid.Row="0"
+                Margin="5"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
                 <StackLayout>
                     <Label>
                         <Label.FormattedText>
@@ -67,7 +63,13 @@
                     </Label>
                 </StackLayout>
             </Frame>
-            <Frame Margin="5" Padding="10">
+            <Frame
+                Grid.Row="1"
+                Margin="5"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
                 <StackLayout>
                     <Label
                         Margin="0,0,0,4"
@@ -87,7 +89,13 @@
                     </Label>
                 </StackLayout>
             </Frame>
-            <Frame Margin="5" Padding="10">
+            <Frame
+                Grid.Row="2"
+                Margin="5"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
                 <StackLayout>
                     <Label
                         Margin="0,0,0,4"
@@ -107,6 +115,6 @@
                     </Label>
                 </StackLayout>
             </Frame>
-        </StackLayout>
+        </Grid>
     </ContentView.Content>
 </ContentView>

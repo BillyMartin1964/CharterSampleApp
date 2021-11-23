@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <None Remove="UserInterface\Fonts\Fa-Solid-900.otf" />
+    <None Remove="UserInterface\Images\PNGs\BillyIcon.png" />
     <None Remove="UserInterface\Images\PNGs\GalaxyPhone.png" />
     <None Remove="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
     <None Remove="UserInterface\Images\PNGs\unknownperson.png" />
@@ -29,6 +30,10 @@
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="UserInterface\Images\PNGs\BillyIcon.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -65,11 +70,18 @@
     <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ProfilePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\SettingsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AuthenticationPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="UserInterface\Images\JPGs\" />
   </ItemGroup>
 </Project>

@@ -1,15 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
-             Shell.PresentationMode="ModalAnimated"
-             x:Class="CharterSampleApp.Views.AuthenticationPage" >
+<ContentPage
+    x:Class="CharterSampleApp.Views.AuthenticationPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    BackgroundColor="{StaticResource AppBackgroundColor}"
+    Shell.PresentationMode="ModalAnimated">
 
     <ContentPage.BindingContext>
         <viewModels:AuthenticationViewModel />
     </ContentPage.BindingContext>
-
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry">
+             <Setter Property="FontSize" Value="20" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-      <ContentView Content="{Binding AuthenticationCV}"/>
+        <ContentView Content="{Binding AuthenticationCV}" />
     </ContentPage.Content>
 </ContentPage>

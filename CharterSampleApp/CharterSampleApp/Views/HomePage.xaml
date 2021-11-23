@@ -121,7 +121,7 @@
                 Margin="0,30"
                 Aspect="AspectFit"
                 Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"
-                WidthRequest="800" />
+                WidthRequest="400" />
 
             <Label HorizontalTextAlignment="Center" Text="{Binding AvailableInText}" />
 

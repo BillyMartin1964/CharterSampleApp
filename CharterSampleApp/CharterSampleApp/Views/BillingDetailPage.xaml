@@ -1,105 +1,143 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.Views.BillingDetailPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="CharterSampleApp.Views.BillingDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    Title="{Binding Title}"
+    BackgroundColor="{StaticResource AppBackgroundColor}">
     <Shell.TitleView>
-        <Label Text="Billing Details" Style="{StaticResource TitleBarStyle}" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="Billing Details" />
     </Shell.TitleView>
     <ContentPage.BindingContext>
         <viewModels:BillingDetailViewModel />
 
     </ContentPage.BindingContext>
-    <StackLayout Spacing="20" Padding="15">
-        <Label HorizontalTextAlignment="Center"
-                    FontAttributes="Bold">
+    <StackLayout Padding="15" Spacing="20">
+        <Label FontAttributes="Bold" HorizontalTextAlignment="Center">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span  Text="SERVICE FROM " />
-                    <Span Text="{Binding SelectedBillingStatement.ServiceFrom}"  />
+                    <Span Text="SERVICE FROM " />
+                    <Span Text="{Binding SelectedBillingStatement.ServiceFrom}" />
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Frame Margin="5" Padding="10">
-            <StackLayout>
+        <Grid RowDefinitions="*,*,*,*" RowSpacing="4">
+            <Frame
+                Grid.Row="0"
+                Margin="0"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
+                <StackLayout>
 
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span  Text="Total Due by " />
-                            <Span Text="{Binding SelectedBillingStatement.DueDate}"  />
-                            <Span Text="    $" FontAttributes="Bold" FontSize="Large" />
-                            <Span Text="{Binding SelectedBillingStatement.AmountDue}" FontAttributes="Bold" FontSize="Large" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span FontAttributes="Bold" Text="Account Number:" />
-                            <Span Text=" " />
-                            <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Total Due by " />
+                                <Span Text="{Binding SelectedBillingStatement.DueDate}" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="    $" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding SelectedBillingStatement.AmountDue}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span FontAttributes="Bold" Text="Account Number:" />
+                                <Span Text=" " />
+                                <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
 
-            </StackLayout>
-        </Frame>
-        <Frame Margin="5" Padding="10">
-            <StackLayout>
-                <Label
-                    Margin="0,0,0,4"
-                    FontAttributes="Bold"
-                    Text="PREVIOUS ACCOUNT ACTIVITY" />
-
-
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Remaining Balance:" />
-                            <Span Text="  $" />
-                            <Span Text="{Binding SelectedBillingStatement.RemainingBalance}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
-        </Frame>
-
-        <Frame Margin="5" Padding="10">
-            <StackLayout>
-                <Label
-                    Margin="0,0,0,4"
-                    FontAttributes="Bold"
-                    Text="NEW CHARGES" />
+                </StackLayout>
+            </Frame>
+            <Frame
+                Grid.Row="1"
+                Margin="0"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
+                <StackLayout>
+                    <Label
+                        Margin="0,0,0,4"
+                        FontAttributes="Bold"
+                        Text="PREVIOUS ACCOUNT ACTIVITY" />
 
 
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Spectrum Internet:" />
-                            <Span Text="  $" />
-                            <Span Text="{Binding SelectedBillingStatement.NewCharges}" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
-        </Frame>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Remaining Balance:" />
+                                <Span Text="  $" />
+                                <Span Text="{Binding SelectedBillingStatement.RemainingBalance}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
 
-        <Frame Margin="5" Padding="10">
-            <StackLayout>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span  Text="Total Due by " />
-                            <Span Text="{Binding SelectedBillingStatement.DueDate}"  />
-                            <Span Text="    $" FontAttributes="Bold" FontSize="Large" />
-                            <Span Text="{Binding SelectedBillingStatement.AmountDue}" FontAttributes="Bold" FontSize="Large" />
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </StackLayout>
-        </Frame>
+            <Frame
+                Grid.Row="2"
+                Margin="0"
+                Padding="8"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                HasShadow="False">
+                <StackLayout>
+                    <Label
+                        Margin="0,0,0,4"
+                        FontAttributes="Bold"
+                        Text="NEW CHARGES" />
+
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Spectrum Internet:" />
+                                <Span Text="  $" />
+                                <Span Text="{Binding SelectedBillingStatement.NewCharges}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+
+            <Frame
+                Grid.Row="3"
+                Margin="0"
+                BackgroundColor="{StaticResource AppBackgroundColor}"
+                BorderColor="{StaticResource Primary}"
+                Padding="8" HasShadow="False">
+                <StackLayout>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Total Due by " />
+                                <Span Text="{Binding SelectedBillingStatement.DueDate}" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="    $" />
+                                <Span
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    Text="{Binding SelectedBillingStatement.AmountDue}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+            </Frame>
+        </Grid>
     </StackLayout>
 
 </ContentPage>

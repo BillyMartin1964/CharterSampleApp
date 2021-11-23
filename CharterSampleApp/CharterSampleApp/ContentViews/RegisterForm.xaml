@@ -4,12 +4,13 @@
              xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
              x:Class="CharterSampleApp.ContentViews.RegisterForm"
              BackgroundColor="Transparent" >
-  <ContentView.Content>
+   
+    <ContentView.Content>
       <StackLayout Padding="20">
           <Label Text="Confirm Your Account" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" Margin="0, 20"/>
 
        <customRenderers:EntryBoxRenderer Placeholder="Enter account number" Style="{StaticResource EntryBoxStyle}" />
-          <customRenderers:EntryBoxRenderer Placeholder="Enter phone number or email" Style="{StaticResource EntryBoxStyle}" />
+          <customRenderers:EntryBoxRenderer Placeholder="Enter email" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
           <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
            
@@ -22,7 +23,7 @@
                       Text="Cancel" />
           </Grid>
 
-            <Label HorizontalTextAlignment="Center">
+            <Label HorizontalTextAlignment="Center" FontSize="20" Margin="20">
               <Label.FormattedText>
                   <FormattedString>
                       <Span Text="Already registered?"/>

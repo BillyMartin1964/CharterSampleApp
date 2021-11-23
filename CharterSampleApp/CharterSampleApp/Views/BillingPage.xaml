@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behavior="clr-namespace:CharterSampleApp.Behaviors;assembly=CharterSampleApp"
     xmlns:models="clr-namespace:CharterSampleApp.Models;assembly=CharterSampleApp"
-    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp">
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModel:BillingViewModel />
     </ContentPage.BindingContext>
@@ -27,13 +28,13 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Margin="20">
+        <StackLayout Margin="10">
             <Button
-                Margin="5,5,5,30"
+                Margin="5"
                 Padding="0"
                 Command="{Binding NavigateForSignInCommand}"
-                FontSize="10"
-                HeightRequest="18"
+                FontSize="14"
+                HeightRequest="20"
                 HorizontalOptions="End"
                 Text="Sign out"
                 WidthRequest="60" />
@@ -47,6 +48,7 @@
                     x:Name="billingSearchBar"
                     Grid.Row="0"
                     Grid.Column="0"
+                    BackgroundColor="{StaticResource AppBackgroundColor}"
                     Text="{Binding SearchString}">
                     <SearchBar.Behaviors>
                         <behavior:EventToCommandBehavior
@@ -82,8 +84,8 @@
             <CollectionView
                 x:Name="BillingStatementsCollectionView"
                 ItemsSource="{Binding DisplayedBillingStatements}"
-                SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
                 SelectedItem="{Binding SelectedItem}"
+                SelectionChangedCommand="{Binding BillingStatementOnItemSelectedCommand}"
                 SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference BillingStatementsCollectionView}}"
                 SelectionMode="Single">
                 <CollectionView.ItemsLayout>
@@ -95,9 +97,10 @@
                         <Frame
                             Margin="0"
                             Padding="2"
+                            BackgroundColor="{StaticResource AppBackgroundColor}"
                             BorderColor="LightGray"
                             CornerRadius="5"
-                            HasShadow="True"
+                            HasShadow="False"
                             IsClippedToBounds="True">
 
                             <StackLayout
