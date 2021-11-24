@@ -6,6 +6,7 @@
     xmlns:converter="clr-namespace:CharterSampleApp.Converters;assembly=CharterSampleApp"
     xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
     xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
@@ -67,13 +68,14 @@
                 Text="Upgrade Your Internet Speed"
                 TextColor="{StaticResource Primary}"
                 VerticalOptions="Center" />
-            <Label
+            <Label Margin="10"
                 FontSize="Micro"
-                HorizontalOptions="CenterAndExpand"
+                HorizontalOptions="Center"
                 Text="Get the freedom to do anything, on more devices. Wireless speeds may vary." />
-            <Grid ColumnSpacing="2"
-                Margin="10"
+            <Grid
+                Margin="5,20,5,0"
                 ColumnDefinitions="*,*,*"
+                ColumnSpacing="2"
                 RowDefinitions="*,40">
 
                 <svg:SvgCachedImage
@@ -114,7 +116,14 @@
                     FontSize="Small"
                     HorizontalTextAlignment="Center"
                     Text="INTERNET GIG" />
-
+                <Grid.IsVisible>
+                    <OnPlatform x:TypeArguments="system:Boolean">
+                        <OnPlatform.Platforms>
+                            <On Platform="iOS" Value="False" />
+                            <On Platform="Android" Value="True" />
+                        </OnPlatform.Platforms>
+                    </OnPlatform>
+                </Grid.IsVisible>
             </Grid>
 
             <Image
