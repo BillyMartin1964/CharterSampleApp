@@ -11,7 +11,7 @@
     </ContentView.Resources>
     <ContentView.Content>
         <Grid RowDefinitions="2*,*,*" RowSpacing="4">
-           
+
             <Frame
                 Grid.Row="0"
                 Margin="5"
@@ -20,7 +20,7 @@
                 BorderColor="{StaticResource Primary}"
                 HasShadow="False">
                 <StackLayout>
-                    <Label>
+                    <Label  FontSize="22" >
                         <Label.FormattedText>
                             <FormattedString>
                                 <Span FontAttributes="Bold" Text="Name:" />
@@ -37,7 +37,7 @@
                             <FormattedString>
                                 <Span FontAttributes="Bold" Text="Account Number:" />
                                 <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.AccountNumber}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -47,20 +47,15 @@
                             <FormattedString>
                                 <Span FontAttributes="Bold" Text="Phone Number:" />
                                 <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.PhoneNumber}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.PhoneNumber}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
 
-                    <Label>
-                        <Label.FormattedText>
-                            <FormattedString>
-                                <Span FontAttributes="Bold" Text="Email Address:" />
-                                <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.EmailAddress}" />
-                            </FormattedString>
-                        </Label.FormattedText>
-                    </Label>
+                    <Label FontAttributes="Bold" Text="Email Address:" />
+
+                    <Label FontSize="22" Text="{Binding CurrentUserAccount.EmailAddress}" />
+
                 </StackLayout>
             </Frame>
             <Frame
@@ -75,15 +70,15 @@
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
                         Text="Service Address:" />
-                    <Label Text="{Binding CurrentUserAccount.ServiceAddress.StreetAddress}" />
+                    <Label FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.City}" />
-                                <Span Text=", " />
-                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.State}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.City}" />
+                                <Span FontSize="22" Text=", " />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.State}" />
                                 <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.ServiceAddress.ZipCode}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.ZipCode}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
@@ -101,15 +96,15 @@
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
                         Text="Billing Address:" />
-                    <Label Text="{Binding CurrentUserAccount.BillingAddress.StreetAddress}" />
+                    <Label FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{Binding CurrentUserAccount.BillingAddress.City}" />
-                                <Span Text=", " />
-                                <Span Text="{Binding CurrentUserAccount.BillingAddress.State}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.City}" />
+                                <Span FontSize="22" Text=", " />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.State}" />
                                 <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.BillingAddress.ZipCode}" />
+                                <Span FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.ZipCode}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

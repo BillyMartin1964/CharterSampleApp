@@ -71,16 +71,16 @@
                 FontSize="Micro"
                 HorizontalOptions="CenterAndExpand"
                 Text="Get the freedom to do anything, on more devices. Wireless speeds may vary." />
-            <Grid
-                Margin="20"
+            <Grid ColumnSpacing="2"
+                Margin="10"
                 ColumnDefinitions="*,*,*"
-                RowDefinitions="*,30">
+                RowDefinitions="*,40">
 
                 <svg:SvgCachedImage
                     Grid.Row="0"
                     Grid.Column="0"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-200mbps.svg"
-                    WidthRequest="100" />
+                    WidthRequest="90" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
@@ -93,7 +93,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-400mbps.svg"
-                    WidthRequest="100" />
+                    WidthRequest="90" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
@@ -106,7 +106,7 @@
                     Grid.Row="0"
                     Grid.Column="2"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-1gbps.svg"
-                    WidthRequest="100" />
+                    WidthRequest="90" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="2"

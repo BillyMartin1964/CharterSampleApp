@@ -27,13 +27,13 @@
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout Margin="30">
-           
-                <Image
-                    Margin="0"
-                    Aspect="AspectFit"
-                    Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.BillyIcon.png}"
-                    WidthRequest="100" />
+        <StackLayout Margin="0" Padding="10">
+
+            <Image
+                Margin="0,10"
+                Aspect="AspectFit"
+                Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.BillyIcon.png}"
+                WidthRequest="100" />
 
             <Label
                 FontAttributes="Bold"
@@ -41,95 +41,87 @@
                 HorizontalOptions="Center"
                 Text="Billy Martin" />
 
-            <ScrollView>
-                <Grid
-                    Margin="0,25,0,0"
-                    Padding="0"
-                    ColumnDefinitions="10, *"
-                    HorizontalOptions="Center"
-                    RowDefinitions="24,24,24,24,24,*">
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="0"
-                        Margin="0,7"
-                        FontFamily="FaIcons"
-                        FontSize="8"
-                        Text="&#xf111;"
-                        TextColor="{StaticResource Primary}" />
-                    <Label
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        FontSize="15"
-                        Text="Xamarin Forms Developer (5 years)" />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="0"
-                        Margin="0,7"
-                        FontFamily="FaIcons"
-                        FontSize="8"
-                        Text="&#xf111;"
-                        TextColor="{StaticResource Primary}" />
-                    <Label
-                        Grid.Row="1"
-                        Grid.Column="1"
-                        FontSize="15"
-                        Text="WordPress Developer (5 years)" />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="0"
-                        Margin="0,7"
-                        FontFamily="FaIcons"
-                        FontSize="8"
-                        Text="&#xf111;"
-                        TextColor="{StaticResource Primary}" />
-                    <Label
-                        Grid.Row="2"
-                        Grid.Column="1"
-                        FontSize="15"
-                        Text="Unity 3D Game Developer (1 year)" />
-                    <Label
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        Margin="0,7"
-                        FontFamily="FaIcons"
-                        FontSize="8"
-                        Text="&#xf111;"
-                        TextColor="{StaticResource Primary}" />
-                    <Label
-                        Grid.Row="3"
-                        Grid.Column="1"
-                        FontSize="15"
-                        Text="PHP Rest Endpoints (1 year)" />
-                    <Label
-                        Grid.Row="4"
-                        Grid.Column="0"
-                        Margin="0,7"
-                        FontFamily="FaIcons"
-                        FontSize="8"
-                        Text="&#xf111;"
-                        TextColor="{StaticResource Primary}" />
-                    <Label
-                        Grid.Row="4"
-                        Grid.Column="1"
-                        FontSize="15"
-                        Text="ASP.Net / MVC (6 months)" />
+            <Grid
+                Margin="20"
+                Padding="0"
+                ColumnDefinitions="10, *"
+                HorizontalOptions="Center"
+                RowDefinitions="24,24,24,24,24,*">
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="0,7"
+                    FontFamily="FaIcons"
+                    FontSize="8"
+                    Text="&#xf111;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    FontSize="15"
+                    Text="Xamarin Forms Developer (5 years)" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="0,7"
+                    FontFamily="FaIcons"
+                    FontSize="8"
+                    Text="&#xf111;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontSize="15"
+                    Text="WordPress Developer (5 years)" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Margin="0,7"
+                    FontFamily="FaIcons"
+                    FontSize="8"
+                    Text="&#xf111;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    FontSize="15"
+                    Text="Unity 3D Game Developer (1 year)" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Margin="0,7"
+                    FontFamily="FaIcons"
+                    FontSize="8"
+                    Text="&#xf111;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    FontSize="15"
+                    Text="PHP Rest Endpoints (1 year)" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="0"
+                    Margin="0,7"
+                    FontFamily="FaIcons"
+                    FontSize="8"
+                    Text="&#xf111;"
+                    TextColor="{StaticResource Primary}" />
+                <Label
+                    Grid.Row="4"
+                    Grid.Column="1"
+                    FontSize="15"
+                    Text="ASP.Net / MVC (6 months)" />
 
-                    <StackLayout
-                        Grid.Row="5"
-                        Grid.ColumnSpan="2"
-                        Margin="0,10,0,0">
-                        <Label FontSize="14">As a Xamarin Forms and WordPress developer with 5+ years of experience, I have created mobile apps, Xbox games, and business websites.</Label>
-                        <Label FontSize="14">
-                            Being self-motivated, I can work unsupervised remotely
-                            for long periods of time with maximum output.
-                        </Label>
-                        <Label FontSize="14">
-                            My military experience taught me to also be a team
-                            player, able to both follow directions and take charge when the need arrives.
-                        </Label>
-                    </StackLayout>
-                </Grid>
-            </ScrollView>
+            </Grid>
+
+            <Label FontSize="14">As a Xamarin Forms and WordPress developer with 5+ years of experience, I have created mobile apps, Xbox games, and business websites.</Label>
+            <Label FontSize="14">
+                Being self-motivated, I can work unsupervised remotely for long periods of time with maximum output.
+            </Label>
+            <Label FontSize="14">
+                My military experience taught me to also be a team player, able to both follow directions and take charge when the need arrives.
+            </Label>
 
         </StackLayout>
     </ContentPage.Content>

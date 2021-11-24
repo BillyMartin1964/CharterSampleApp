@@ -46,10 +46,12 @@
             <Grid Margin="0,10" ColumnDefinitions="*, 30,30">
                 <SearchBar
                     x:Name="billingSearchBar"
-                    Grid.Row="0"
+                    Grid.Row="0"  
                     Grid.Column="0"
                     BackgroundColor="{StaticResource AppBackgroundColor}"
-                    Text="{Binding SearchString}">
+                    CancelButtonColor="Transparent"
+                    Text="{Binding SearchString}"
+                    TextColor="Black">
                     <SearchBar.Behaviors>
                         <behavior:EventToCommandBehavior
                             Command="{Binding SearchCollectionViewCommand}"
