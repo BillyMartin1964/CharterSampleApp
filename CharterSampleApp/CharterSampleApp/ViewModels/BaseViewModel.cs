@@ -65,11 +65,19 @@ namespace CharterSampleApp.ViewModels
         }
         #endregion
 
-       
 
+        private object selectedItem;
+        public object SelectedItem
+        {
+            get { return selectedItem; }
+            set
+            {
+                selectedItem = value;
+                OnPropertyChanged();
+            }
+        }
 
         private UserAccount currentUserAccount;
-
         public UserAccount CurrentUserAccount
         {
             get { return currentUserAccount; }
@@ -101,7 +109,6 @@ namespace CharterSampleApp.ViewModels
         {
             await Shell.Current.GoToAsync(page);
         }
-
         
         private string userLoggedInMessage;
         public string UserLoggedInMessage

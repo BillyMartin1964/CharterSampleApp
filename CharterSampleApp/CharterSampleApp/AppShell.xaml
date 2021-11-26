@@ -64,14 +64,14 @@
             <ShellContent.Icon>
                 <FontImageSource FontFamily="FaIcons" Glyph="&#xf05a;" />
             </ShellContent.Icon>
-   </ShellContent>
+        </ShellContent>
 
         <ShellContent
             Title="Profile"
             ContentTemplate="{DataTemplate local:ProfilePage}"
             Route="ProfilePage">
             <ShellContent.Icon>
-                    <FontImageSource FontFamily="FaIcons" Glyph="&#xf007;" />
+                <FontImageSource FontFamily="FaIcons" Glyph="&#xf007;" />
             </ShellContent.Icon>
         </ShellContent>
 

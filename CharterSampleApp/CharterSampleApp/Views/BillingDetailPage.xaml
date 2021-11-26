@@ -3,8 +3,8 @@
     x:Class="CharterSampleApp.Views.BillingDetailPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
+    xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     Title="{Binding Title}"
     BackgroundColor="{StaticResource AppBackgroundColor}">
     <Shell.TitleView>
@@ -15,10 +15,19 @@
 
     </ContentPage.BindingContext>
     <StackLayout Padding="15" Spacing="20">
+        <Button
+            Margin="0"
+            Padding="1, 0"
+            Command="{Binding NavigateForSignInCommand}"
+            FontSize="14"
+            HeightRequest="20"
+            HorizontalOptions="End"
+            Text="{x:Static resource:AppResources.SignOut}" />
+
         <Label FontAttributes="Bold" HorizontalTextAlignment="Center">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="{x:Static resource:AppResources.SERVICEFROM} " />
+                    <Span Text="{x:Static resource:AppResources.SERVICEFROM}" />
                     <Span Text="{Binding SelectedBillingStatement.ServiceFrom}" />
                 </FormattedString>
             </Label.FormattedText>
@@ -36,7 +45,7 @@
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{x:Static resource:AppResources.TotalDueby} " />
+                                <Span Text="{x:Static resource:AppResources.TotalDueby}" />
                                 <Span Text="{Binding SelectedBillingStatement.DueDate}" />
                                 <Span
                                     FontAttributes="Bold"
@@ -116,14 +125,15 @@
             <Frame
                 Grid.Row="3"
                 Margin="0"
+                Padding="8"
                 BackgroundColor="{StaticResource AppBackgroundColor}"
                 BorderColor="{StaticResource Primary}"
-                Padding="8" HasShadow="False">
+                HasShadow="False">
                 <StackLayout>
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span Text="{x:Static resource:AppResources.TotalDueby} " />
+                                <Span Text="{x:Static resource:AppResources.TotalDueby}" />
                                 <Span Text="{Binding SelectedBillingStatement.DueDate}" />
                                 <Span
                                     FontAttributes="Bold"

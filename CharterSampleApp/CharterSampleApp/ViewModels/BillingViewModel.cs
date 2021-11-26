@@ -64,16 +64,7 @@ namespace CharterSampleApp.ViewModels
 
         #region Select
 
-        private object selectedItem;
-        public object SelectedItem
-        {
-            get { return selectedItem; }
-            set
-            {
-                selectedItem = value;
-                OnPropertyChanged();
-            }
-        }
+ 
 
         private BillingStatement selectedBillingStatement;
         public BillingStatement SelectedBillingStatement

@@ -19,6 +19,7 @@
                 Padding="8"
                 BackgroundColor="{StaticResource AppBackgroundColor}"
                 BorderColor="{StaticResource Primary}"
+                CornerRadius="8"
                 HasShadow="False">
                 <StackLayout>
                     <Label FontSize="22">
@@ -70,7 +71,7 @@
                     <Label
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
-                        Text="{x:Static resource:AppResources.ServiceAddress:}" />
+                        Text="{x:Static resource:AppResources.ServiceAddress_}" />
                     <Label FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>
@@ -96,7 +97,7 @@
                     <Label
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
-                        Text="{x:Static resource:AppResources.BillingAddress:}" />
+                        Text="{x:Static resource:AppResources.BillingAddress_}" />
                     <Label FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>

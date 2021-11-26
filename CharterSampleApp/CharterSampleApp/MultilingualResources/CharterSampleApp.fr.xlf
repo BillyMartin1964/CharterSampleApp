@@ -182,6 +182,10 @@
           <source>Xamarin Forms Developer (5 years)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Développeur Xamarin Forms (5 ans)</target>
         </trans-unit>
+        <trans-unit id="OpenDeviceSettings" translate="yes" xml:space="preserve">
+          <source>Open Device Settings For This App</source>
+          <target state="new">Open Device Settings For This App</target>
+        </trans-unit>
       </group>
     </body>
   </file>

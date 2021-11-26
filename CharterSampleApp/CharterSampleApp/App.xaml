@@ -17,6 +17,11 @@
                 <Setter Property="BackgroundColor" Value="White" />
             </Style>
 
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="{StaticResource Primary}" />
+                <Setter Property="CornerRadius" Value="8" />
+            </Style>
+
             <Style TargetType="Label">
                 <Setter Property="FontFamily" Value="AdobeClean" />
                 <Setter Property="TextColor" Value="Black" />

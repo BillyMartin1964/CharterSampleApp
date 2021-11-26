@@ -5,8 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:contentviews="clr-namespace:CharterSampleApp.ContentViews;assembly=CharterSampleApp"
     xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
-    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModel:AccountViewModel />
@@ -31,14 +31,14 @@
     <ContentPage.Content>
         <StackLayout Margin="10">
             <Button
-                Margin="5"
-                Padding="0"
+                Margin="0"
+                Padding="1, 0"
                 Command="{Binding NavigateForSignInCommand}"
                 FontSize="14"
                 HeightRequest="20"
                 HorizontalOptions="End"
-                Text="{x:Static resource:AppResources.SignOut}"
-                WidthRequest="60" />
+                Text="{x:Static resource:AppResources.SignOut}" />
+
             <contentviews:AccountContentView />
         </StackLayout>
     </ContentPage.Content>

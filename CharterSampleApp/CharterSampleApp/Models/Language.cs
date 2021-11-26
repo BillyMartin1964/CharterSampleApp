@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace CharterSampleApp.Models
 {
-    public class Language
+    public class Language 
     {
         public int _id { get; set; }
 

@@ -9,6 +9,7 @@ using System.Windows.Input;
 using CharterSampleApp.Interfaces;
 using CharterSampleApp.Models;
 using CharterSampleApp.Resources;
+
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -39,12 +40,14 @@ namespace CharterSampleApp.ViewModels
         {
             get { return languages; }
 
-            set { SetProperty(ref languages, value); }
+            set
+            {
+                SetProperty(ref languages, value);
+                OnPropertyChanged();
+            }
         }
 
-    
 
-       
         public ObservableCollection<Language> CreateLanguages()
         {
             return new ObservableCollection<Language>
@@ -67,22 +70,26 @@ namespace CharterSampleApp.ViewModels
             };
         }
 
-
         ICommand languageSelectedCommand;
         public ICommand LanguageSelectedCommand =>
             languageSelectedCommand ??
-            (languageSelectedCommand = new Command<Language>(async (x) => await ExecuteLanguageSelectedCommand(x)));
+            (languageSelectedCommand = new Command<object>(async (x) => await ExecuteLanguageSelectedCommand(x)));
 
-        public async Task ExecuteLanguageSelectedCommand(Language e)
+        public async Task ExecuteLanguageSelectedCommand(object selection)
         {
-            if (e.LanguageAbreviation == null)
+            if (selection == null)
                 return;
 
-            var currentLanguage = AppResources.Culture;
+            var selectedLanguage = selection as Language;
+
+            selection = null;
+
+            if (selectedLanguage == null)
+                return;
 
             string englishName = string.Empty;
 
-            var languageAbrev = e?.LanguageAbreviation;
+            var languageAbrev = selectedLanguage.LanguageAbreviation;
 
             CultureInfo[] neutralCultureInfoList = CultureInfo.GetCultures(CultureTypes.NeutralCultures);
 
@@ -91,39 +98,11 @@ namespace CharterSampleApp.ViewModels
             AppResources.Culture = Thread.CurrentThread.CurrentUICulture;
             var ci = Thread.CurrentThread.CurrentUICulture;
 
-            //string TitleString = AppResources.PopupTitle;
-            //string MessageString = $"{AppResources.PopupLanguageMessage} {AppResources.to} {AppResources.Culture.NativeName}";
+            SelectedItem = null;
 
-            //string OkString = AppResources.Okay;
-            //string CancelString = AppResources.Cancel;
-
-            //var action = await Application.Current.MainPage.DisplayAlert(TitleString, MessageString, OkString, CancelString);
-            //SelectedItem = null;
-            //LanguagelistVisible = false;
-
-            //MainSettingsGridVisible = true;
-            //if (action)
-            //{
-
-                //if (Device.RuntimePlatform == Device.UWP)
-                //{
-                //    Analytics.TrackEvent("Changed Language to " + englishName + " (UWP)");
-                //}
-                //else
-                //{
-                //    Analytics.TrackEvent("Changed Language to " + englishName + " (Non UWP)");
-                //}
-
-                SetCultureInfo(CultureInfo.CurrentCulture);
-
-                //MessagingCenter.Send<SettingsViewModel>(this, "ResetMenu");
-
-                //await _navigationService.NavigateAsync("/PrismMasterDetailPage/NavigationPage/TabbedHomePage");
-            //}
-            //else
-            //{
-            //    Thread.CurrentThread.CurrentUICulture = currentLanguage;
-            //}
+            SetCultureInfo(CultureInfo.CurrentCulture);
+           
+            Application.Current.MainPage = new AppShell();
         }
 
         public void SetCultureInfo(CultureInfo cultureInfo)

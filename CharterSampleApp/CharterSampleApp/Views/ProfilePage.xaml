@@ -29,7 +29,14 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Margin="0" Padding="10">
-
+            <Button
+                Margin="0"
+                Padding="1, 0"
+                Command="{Binding NavigateForSignInCommand}"
+                FontSize="14"
+                HeightRequest="20"
+                HorizontalOptions="End"
+                Text="{x:Static resource:AppResources.SignOut}" />
             <Image
                 Margin="0,10"
                 Aspect="AspectFit"
