@@ -22,7 +22,6 @@ namespace CharterSampleApp.ViewModels
         {
             CurrentUserAccount = new UserAccount();
 
-            CurrentUserAccount = DummyData.GetUserAccount();
 
         }
 

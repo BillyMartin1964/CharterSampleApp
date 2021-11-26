@@ -10,7 +10,13 @@ namespace CharterSampleApp.ViewModels
     {
         public AboutViewModel()
         {
-            AppVersion =  $"Spectrum Sample App Version: {DependencyService.Get<IGetAppVersion>().GetAppVersion()}";
+            GetAppVersion();
+        }
+
+        private void GetAppVersion()
+        {
+            // Use Dependency Service to get the platform's app version
+            AppVersion = $"Spectrum Sample App Version: {DependencyService.Get<IGetAppVersion>().GetAppVersion()}";
         }
 
         private string appVersion;

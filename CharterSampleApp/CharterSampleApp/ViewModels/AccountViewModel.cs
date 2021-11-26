@@ -20,8 +20,16 @@ namespace CharterSampleApp.ViewModels
 
         public AccountViewModel()
         {
-         
+            GetCurrentSignedInUser();
         }
 
+        private void GetCurrentSignedInUser()
+        {
+            if (App.UserSignedIn)
+            {
+                // Only show Account data to signed-in user
+                CurrentUserAccount = _Repository.GetCurrentUserAccount(); 
+            }
+        }
     }
 }

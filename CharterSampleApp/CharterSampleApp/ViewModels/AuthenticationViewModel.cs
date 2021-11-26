@@ -17,17 +17,38 @@ namespace CharterSampleApp.ViewModels
             AuthenticationCV = new SignInForm();
         }
 
+        private ContentView authenticationCV;
+        public ContentView AuthenticationCV
+        {
+            get { return authenticationCV; }
+            set
+            {
+                authenticationCV = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        #region Registration
 
         private ICommand registerUserCommand;
         public ICommand RegisterUserCommand =>
             registerUserCommand ??
-            (registerUserCommand = new Command(ExecuteRegisterUserCommand));
+            (registerUserCommand = new Command(async async => await ExecuteRegisterUserCommand()));
 
-        private void ExecuteRegisterUserCommand()
+        private async Task ExecuteRegisterUserCommand()
         {
-            // Save Registered User
+            // Save Registered User, then switch to sign-in form
+            var registrationSuccessful = _Repository.RegisterNewUser();
 
-            AuthenticationCV = new SignInForm();
+            if (registrationSuccessful)
+            {
+                AuthenticationCV = new SignInForm();
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Registration Unsuccessful", "Please try again or contact customer support.", "OK");
+            }
         }
 
 
@@ -51,16 +72,11 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-        private ContentView authenticationCV;
-        public ContentView AuthenticationCV
-        {
-            get { return authenticationCV; }
-            set
-            {
-                authenticationCV = value;
-                OnPropertyChanged();
-            }
-        }
+        #endregion
+
+        #region Sign In 
+
+        
 
         private ICommand signInCommand;
         public ICommand SignInCommand =>
@@ -86,5 +102,9 @@ namespace CharterSampleApp.ViewModels
 
             await App.Current.MainPage.Navigation.PushModalAsync(new HomePage(), true);
         }
+
+
+        #endregion
+
     }
 }
