@@ -8,6 +8,7 @@
     xmlns:svg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModel:HomeViewModel />
@@ -64,7 +65,7 @@
                 HorizontalOptions="CenterAndExpand">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Welcome to Spectrum" TextColor="{StaticResource Primary}" />
+                        <Span Text="{x:Static resource:AppResources.WelcometoSpectrum}" TextColor="{StaticResource Primary}" />
                         <Span Text="" />
                         <Span
                             FontFamily="FaIcons"
@@ -77,13 +78,13 @@
             <Label
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand"
-                Text="Upgrade Your Internet Speed"
+                Text="{x:Static resource:AppResources.Upgrade}"
                 TextColor="{StaticResource Primary}"
                 VerticalOptions="Center" />
             <Label Margin="10"
                 FontSize="Micro"
                 HorizontalOptions="Center"
-                Text="Get the freedom to do anything, on more devices. Wireless speeds may vary." />
+                Text="{x:Static resource:AppResources.GetFreedom}" />
             <Grid
                 Margin="5,20,5,0"
                 ColumnDefinitions="*,*,*"
@@ -127,7 +128,7 @@
                     FontAttributes="Bold"
                     FontSize="Small"
                     HorizontalTextAlignment="Center"
-                    Text="INTERNET GIG" />
+                    Text=" INTERNET GIG" />
                 <Grid.IsVisible>
                     <OnPlatform x:TypeArguments="system:Boolean">
                         <OnPlatform.Platforms>
@@ -150,7 +151,7 @@
                 x:Name="SignInButton"
                 Margin="30"
                 Command="{Binding NavigateForSignInCommand}"
-                Text="Sign In" />
+                Text="{x:Static resource:AppResources.SignIn}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

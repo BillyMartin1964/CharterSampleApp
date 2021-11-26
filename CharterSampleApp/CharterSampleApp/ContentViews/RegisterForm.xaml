@@ -15,7 +15,7 @@
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
-                Text="{extensions:ImageResource CharterSampleApp.ConfirmYourAccount:}" />
+                Text="{x:Static resource:AppResources.ConfirmYourAccount_}" />
 
             <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enteraccountnumber}" Style="{StaticResource EntryBoxStyle}" />
             <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enteremail}" Style="{StaticResource EntryBoxStyle}" />
@@ -35,11 +35,11 @@
                 <Button
                     Grid.Column="0"
                     Command="{Binding RegisterUserCommand}"
-                    Text="Register" />
+                    Text="{x:Static resource:AppResources.Register}" />
                 <Button
                     Grid.Column="1"
                     Command="{Binding CancelCommand}"
-                    Text="Cancel" />
+                    Text="{x:Static resource:AppResources.Cancel}" />
             </Grid>
 
             <Label

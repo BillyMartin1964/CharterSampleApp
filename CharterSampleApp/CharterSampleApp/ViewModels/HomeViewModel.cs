@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
+using CharterSampleApp.Resources;
 using CharterSampleApp.Views;
 
 using Xamarin.Essentials;
@@ -27,11 +27,11 @@ namespace CharterSampleApp.ViewModels
 
             if (isAvailableInArea)
             {
-                AvailableInText = "Now available in your area";
+                AvailableInText = AppResources.NowAvailable;
             }
             else
             {
-                AvailableInText = "Coming soon to your area";
+                AvailableInText = AppResources.ComingSoon;
             }
         }
 

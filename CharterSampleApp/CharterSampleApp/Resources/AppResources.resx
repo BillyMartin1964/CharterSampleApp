@@ -150,6 +150,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Coming soon to your area</value>
+  </data>
   <data name="Confirmpassword" xml:space="preserve">
     <value>Confirm password</value>
   </data>
@@ -180,6 +183,18 @@
   <data name="Enterpassword" xml:space="preserve">
     <value>Enter password</value>
   </data>
+  <data name="GetFreedom" xml:space="preserve">
+    <value>Get the freedom to do anything, on more devices. Wireless speeds may vary.</value>
+  </data>
+  <data name="INTERNET" xml:space="preserve">
+    <value>INTERNET</value>
+  </data>
+  <data name="INTERNETGIG" xml:space="preserve">
+    <value>INTERNET GIG</value>
+  </data>
+  <data name="INTERNETULTRA" xml:space="preserve">
+    <value>INTERNET ULTRA</value>
+  </data>
   <data name="Languages" xml:space="preserve">
     <value>Languages</value>
   </data>
@@ -191,6 +206,9 @@
   </data>
   <data name="Notregistered?" xml:space="preserve">
     <value>Not registered?</value>
+  </data>
+  <data name="NowAvailable" xml:space="preserve">
+    <value>Now available in your area</value>
   </data>
   <data name="OpenDeviceSettings" xml:space="preserve">
     <value>Open Device Settings For This App</value>
@@ -243,8 +261,14 @@
   <data name="Unity3DGameDeveloper" xml:space="preserve">
     <value>Unity 3D Game Developer (1 year)</value>
   </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Upgrade Your Internet Speed</value>
+  </data>
   <data name="View12MonthsBilling" xml:space="preserve">
     <value>View your billing statements for the last 12 months.</value>
+  </data>
+  <data name="WelcometoSpectrum" xml:space="preserve">
+    <value>Welcome to Spectrum</value>
   </data>
   <data name="WordPressDeveloper5" xml:space="preserve">
     <value>WordPress Developer (5 years)</value>

@@ -184,7 +184,39 @@
         </trans-unit>
         <trans-unit id="OpenDeviceSettings" translate="yes" xml:space="preserve">
           <source>Open Device Settings For This App</source>
-          <target state="new">Open Device Settings For This App</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ouvrir les paramètres de l’appareil pour cette application</target>
+        </trans-unit>
+        <trans-unit id="GetFreedom" translate="yes" xml:space="preserve">
+          <source>Get the freedom to do anything, on more devices. Wireless speeds may vary.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Obtenez la liberté de faire n’importe quoi, sur plus d’appareils. Les vitesses sans fil peuvent varier.</target>
+        </trans-unit>
+        <trans-unit id="INTERNET" translate="yes" xml:space="preserve">
+          <source>INTERNET</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">INTERNET</target>
+        </trans-unit>
+        <trans-unit id="INTERNETGIG" translate="yes" xml:space="preserve">
+          <source>INTERNET GIG</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">CONCERT SUR INTERNET</target>
+        </trans-unit>
+        <trans-unit id="INTERNETULTRA" translate="yes" xml:space="preserve">
+          <source>INTERNET ULTRA</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">INTERNET ULTRA</target>
+        </trans-unit>
+        <trans-unit id="Upgrade" translate="yes" xml:space="preserve">
+          <source>Upgrade Your Internet Speed</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mettez à niveau votre vitesse Internet</target>
+        </trans-unit>
+        <trans-unit id="WelcometoSpectrum" translate="yes" xml:space="preserve">
+          <source>Welcome to Spectrum</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bienvenue chez Spectrum</target>
+        </trans-unit>
+        <trans-unit id="ComingSoon" translate="yes" xml:space="preserve">
+          <source>Coming soon to your area</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bientôt dans votre région</target>
+        </trans-unit>
+        <trans-unit id="NowAvailable" translate="yes" xml:space="preserve">
+          <source>Now available in your area</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Maintenant disponible dans votre région</target>
         </trans-unit>
       </group>
     </body>

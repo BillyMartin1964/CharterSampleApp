@@ -144,4 +144,31 @@
   <data name="XamarinFormsDeveloper5" xml:space="preserve">
     <value>Desarrollador de Xamarin Forms (5 años)</value>
   </data>
+  <data name="OpenDeviceSettings" xml:space="preserve">
+    <value>Abra configuración del dispositivo para esta aplicación</value>
+  </data>
+  <data name="GetFreedom" xml:space="preserve">
+    <value>Obtenga la libertad de hacer cualquier cosa, en más dispositivos. Las velocidades inalámbricas pueden variar.</value>
+  </data>
+  <data name="INTERNET" xml:space="preserve">
+    <value>Internet</value>
+  </data>
+  <data name="INTERNETGIG" xml:space="preserve">
+    <value>CONCIERTO POR INTERNET</value>
+  </data>
+  <data name="INTERNETULTRA" xml:space="preserve">
+    <value>INTERNET ULTRA</value>
+  </data>
+  <data name="Upgrade" xml:space="preserve">
+    <value>Actualice su velocidad de Internet</value>
+  </data>
+  <data name="WelcometoSpectrum" xml:space="preserve">
+    <value>Bienvenido a Spectrum</value>
+  </data>
+  <data name="ComingSoon" xml:space="preserve">
+    <value>Próximamente en su área</value>
+  </data>
+  <data name="NowAvailable" xml:space="preserve">
+    <value>Ahora disponible en su área</value>
+  </data>
 </root>

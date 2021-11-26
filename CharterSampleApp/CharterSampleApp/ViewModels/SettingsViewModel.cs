@@ -9,7 +9,7 @@ using System.Windows.Input;
 using CharterSampleApp.Interfaces;
 using CharterSampleApp.Models;
 using CharterSampleApp.Resources;
-
+using CharterSampleApp.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -101,8 +101,16 @@ namespace CharterSampleApp.ViewModels
             SelectedItem = null;
 
             SetCultureInfo(CultureInfo.CurrentCulture);
+            
+            if (App.UserSignedIn)
+            {
+              Application.Current.MainPage = new AppShell();   
+            }
+            else
+            {
+                 Application.Current.MainPage = new HomePage();
+            }
            
-            Application.Current.MainPage = new AppShell();
         }
 
         public void SetCultureInfo(CultureInfo cultureInfo)

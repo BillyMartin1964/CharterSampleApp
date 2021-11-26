@@ -160,6 +160,15 @@ namespace CharterSampleApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coming soon to your area.
+        /// </summary>
+        internal static string ComingSoon {
+            get {
+                return ResourceManager.GetString("ComingSoon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Confirm password.
         /// </summary>
         internal static string Confirmpassword {
@@ -250,6 +259,42 @@ namespace CharterSampleApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Get the freedom to do anything, on more devices. Wireless speeds may vary..
+        /// </summary>
+        internal static string GetFreedom {
+            get {
+                return ResourceManager.GetString("GetFreedom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNET.
+        /// </summary>
+        internal static string INTERNET {
+            get {
+                return ResourceManager.GetString("INTERNET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNET GIG.
+        /// </summary>
+        internal static string INTERNETGIG {
+            get {
+                return ResourceManager.GetString("INTERNETGIG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INTERNET ULTRA.
+        /// </summary>
+        internal static string INTERNETULTRA {
+            get {
+                return ResourceManager.GetString("INTERNETULTRA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Languages.
         /// </summary>
         internal static string Languages {
@@ -282,6 +327,15 @@ namespace CharterSampleApp.Resources {
         internal static string Notregistered_ {
             get {
                 return ResourceManager.GetString("Notregistered?", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Now available in your area.
+        /// </summary>
+        internal static string NowAvailable {
+            get {
+                return ResourceManager.GetString("NowAvailable", resourceCulture);
             }
         }
         
@@ -439,11 +493,29 @@ namespace CharterSampleApp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Upgrade Your Internet Speed.
+        /// </summary>
+        internal static string Upgrade {
+            get {
+                return ResourceManager.GetString("Upgrade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to View your billing statements for the last 12 months..
         /// </summary>
         internal static string View12MonthsBilling {
             get {
                 return ResourceManager.GetString("View12MonthsBilling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to Spectrum.
+        /// </summary>
+        internal static string WelcometoSpectrum {
+            get {
+                return ResourceManager.GetString("WelcometoSpectrum", resourceCulture);
             }
         }
         
