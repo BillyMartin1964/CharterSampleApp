@@ -2,7 +2,9 @@
 using CharterSampleApp.Views;
 
 using System;
+using System.Globalization;
 using CharterSampleApp.Models;
+using CharterSampleApp.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,9 +14,13 @@ namespace CharterSampleApp
     {
         public static BillingStatement SelectedBillingStatement;
         public static bool UserSignedIn;
+        public static CultureInfo AppCurrentCulture;
+
         public App()
         {
             InitializeComponent();
+            
+            AppResources.Culture = CultureInfo.CurrentCulture;
 
             DependencyService.Register<Repository>();
             MainPage = new HomePage();

@@ -9,8 +9,12 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CharterSampleApp.ContentViews;
+using CharterSampleApp.Resources;
 using CharterSampleApp.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
+using DeviceInfo = Xamarin.Essentials.DeviceInfo;
 
 namespace CharterSampleApp.ViewModels
 {
@@ -145,7 +149,8 @@ namespace CharterSampleApp.ViewModels
         {
            var tempFlag = string.Empty;
 
-            var languageAbrev = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+         
+            var languageAbrev = AppResources.Culture.TwoLetterISOLanguageName;
 
             switch (languageAbrev)
             {

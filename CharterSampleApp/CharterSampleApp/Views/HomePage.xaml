@@ -10,9 +10,11 @@
     xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     BackgroundColor="{StaticResource AppBackgroundColor}">
+
     <ContentPage.BindingContext>
         <viewModel:HomeViewModel />
     </ContentPage.BindingContext>
+
     <Shell.TitleView>
         <Label Style="{StaticResource TitleBarStyle}">
             <Label.FormattedText>

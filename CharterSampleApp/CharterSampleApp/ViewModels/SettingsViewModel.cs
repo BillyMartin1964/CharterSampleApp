@@ -97,6 +97,7 @@ namespace CharterSampleApp.ViewModels
 
             AppResources.Culture = Thread.CurrentThread.CurrentUICulture;
             var ci = Thread.CurrentThread.CurrentUICulture;
+            App.AppCurrentCulture =  Thread.CurrentThread.CurrentUICulture;
 
             SelectedItem = null;
 

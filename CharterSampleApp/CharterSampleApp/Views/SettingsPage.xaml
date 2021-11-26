@@ -1,25 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  BackgroundColor="{StaticResource AppBackgroundColor}"
-             xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
-             xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.Views.SettingsPage">
+<ContentPage
+    x:Class="CharterSampleApp.Views.SettingsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
+    xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
+    BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModel:SettingsViewModel />
     </ContentPage.BindingContext>
     <Shell.TitleView>
-        <Label Text="Settings" Style="{StaticResource TitleBarStyle}" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="Settings" />
     </Shell.TitleView>
     <ContentPage.Content>
         <StackLayout Margin="20">
-                <Grid ColumnDefinitions="*,*" RowDefinitions="50,*">
-                    <Label
+            <Grid ColumnDefinitions="*,*" RowDefinitions="50,*">
+                <Label
                     Grid.Row="0"
                     Grid.Column="0"
                     Style="{DynamicResource settingsLabelStyle}"
                     Text="{x:Static resource:AppResources.Languages}" />
 
-                    <Image
+                <Image
                     x:Name="LanguagesButton"
                     Grid.Row="0"
                     Grid.Column="1"
@@ -28,43 +30,46 @@
                     Source="{Binding LanguageFlag}"
                     VerticalOptions="Center"
                     WidthRequest="80" />
-                       
 
-                    <CollectionView
+
+                <CollectionView
                     x:Name="LanguagesCollectionView"
                     Grid.Row="1"
                     Margin="10"
                     BackgroundColor="Transparent"
-                    ItemsSource="{Binding Languages}" 
+                    ItemsSource="{Binding Languages}"
                     SelectedItem="{Binding SelectedItem}"
                     SelectionChangedCommand="{Binding LanguageSelectedCommand}"
                     SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference LanguagesCollectionView}}"
                     SelectionMode="Single"
                     VerticalOptions="Start">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                <StackLayout
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout
                                 Padding="0"
                                 HorizontalOptions="Start"
                                 Orientation="Horizontal">
-                                    <Image
+                                <Image
                                     Margin="5"
                                     HeightRequest="30"
                                     HorizontalOptions="Center"
                                     Source="{Binding FlagImage}" />
-                                    <Label
+                                <Label
                                     Margin="5"
                                     FontSize="Small"
                                     Text="{Binding LanguageName}"
                                     TextColor="{DynamicResource PageTextColor}"
                                     VerticalOptions="Center"
                                     VerticalTextAlignment="Center" />
-                                </StackLayout>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </Grid>
-            <Button Text="{x:Static resource:AppResources.OpenDeviceSettings}" Command="{Binding OpenDeviceSettings}" Margin="20" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Button
+                Margin="20"
+                Command="{Binding OpenDeviceSettings}"
+                Text="{x:Static resource:AppResources.OpenDeviceSettings}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

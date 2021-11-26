@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
+
 using CharterSampleApp.Resources;
 using CharterSampleApp.Views;
 
@@ -53,7 +54,7 @@ namespace CharterSampleApp.ViewModels
 
         private async Task ExecuteOpenSettingsCommand()
         {
-          //  App.Current.MainPage = new NavigationPage(new SettingsPage());
+            //  App.Current.MainPage = new NavigationPage(new SettingsPage());
 
             await App.Current.MainPage.Navigation.PushModalAsync(new SettingsPage(), true);
         }

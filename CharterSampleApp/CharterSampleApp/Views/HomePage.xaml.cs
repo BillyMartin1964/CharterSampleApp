@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using CharterSampleApp.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,7 +17,7 @@ namespace CharterSampleApp.Views
         public HomePage()
         {
             InitializeComponent();
+
         }
-        
     }
 }
