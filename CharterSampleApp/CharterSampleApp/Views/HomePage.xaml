@@ -45,7 +45,19 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
-            <Label
+            <Image Margin="5"
+                x:Name="LanguagesButton"
+                HeightRequest="25"
+                HorizontalOptions="End"
+                Source="{Binding LanguageFlag}"
+                VerticalOptions="Start"
+                WidthRequest="40" >
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding OpenSettingsCommand}" />
+                </Image.GestureRecognizers>
+                </Image>
+
+                <Label
                 Margin="20"
                 FontAttributes="Bold"
                 FontSize="Large"

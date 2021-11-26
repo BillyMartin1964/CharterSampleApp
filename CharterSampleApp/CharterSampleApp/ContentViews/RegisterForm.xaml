@@ -1,41 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
-             x:Class="CharterSampleApp.ContentViews.RegisterForm"
-             BackgroundColor="Transparent" >
-   
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="CharterSampleApp.ContentViews.RegisterForm"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
+    xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
+    BackgroundColor="Transparent">
+
     <ContentView.Content>
-      <StackLayout Padding="20">
-          <Label Text="Confirm Your Account" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="Large" Margin="0, 20"/>
+        <StackLayout Padding="20">
+            <Label
+                Margin="0,20"
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalTextAlignment="Center"
+                Text="{extensions:ImageResource CharterSampleApp.ConfirmYourAccount:}" />
 
-       <customRenderers:EntryBoxRenderer Placeholder="Enter account number" Style="{StaticResource EntryBoxStyle}" />
-          <customRenderers:EntryBoxRenderer Placeholder="Enter email" Style="{StaticResource EntryBoxStyle}" />
-          <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
-          <customRenderers:EntryBoxRenderer Placeholder="Confirm password" Style="{StaticResource EntryBoxStyle}" />
-           
-          <Grid ColumnDefinitions="*,*" ColumnSpacing="5"    Margin="20,10, 20, 5">
-              <Button Grid.Column="0"
-                      Command="{Binding RegisterUserCommand}"
-                      Text="Register" />
-              <Button Grid.Column="1"
-                      Command="{Binding CancelCommand}"
-                      Text="Cancel" />
-          </Grid>
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enteraccountnumber}" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enteremail}" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer
+                IsPassword="True"
+                Placeholder="{x:Static resource:AppResources.Enterpassword}"
+                Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer
+                IsPassword="True"
+                Placeholder="{x:Static resource:AppResources.Confirmpassword}"
+                Style="{StaticResource EntryBoxStyle}" />
 
-            <Label HorizontalTextAlignment="Center" FontSize="20" Margin="20">
-              <Label.FormattedText>
-                  <FormattedString>
-                      <Span Text="Already registered?"/>
-                      <Span Text=" " />
-                      <Span Text="Sign In" TextColor="{StaticResource Primary}">
-                          <Span.GestureRecognizers>
-                                <TapGestureRecognizer Command="{Binding SignInRegisterFormCommand}"  CommandParameter="sign in" />
-                          </Span.GestureRecognizers>
-                      </Span>
-                  </FormattedString>
-              </Label.FormattedText>
-          </Label>
+            <Grid
+                Margin="20,10,20,5"
+                ColumnDefinitions="*,*"
+                ColumnSpacing="5">
+                <Button
+                    Grid.Column="0"
+                    Command="{Binding RegisterUserCommand}"
+                    Text="Register" />
+                <Button
+                    Grid.Column="1"
+                    Command="{Binding CancelCommand}"
+                    Text="Cancel" />
+            </Grid>
+
+            <Label
+                Margin="20"
+                FontSize="20"
+                HorizontalTextAlignment="Center">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static resource:AppResources.Alreadyregistered_}" />
+                        <Span Text=" " />
+                        <Span Text="{x:Static resource:AppResources.SignIn}" TextColor="{StaticResource Primary}">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding SignInRegisterFormCommand}" CommandParameter="sign in" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

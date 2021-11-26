@@ -4,6 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:customRenderers="clr-namespace:CharterSampleApp.CustomRenderers;assembly=CharterSampleApp"
+    xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     BackgroundColor="Transparent">
     <ContentView.Resources>
         <ResourceDictionary>
@@ -19,10 +21,10 @@
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalTextAlignment="Center"
-                Text="Sign In To get Started!" />
+                Text="{x:Static resource:AppResources.SignInToGetStarted}" />
 
-            <customRenderers:EntryBoxRenderer Placeholder="Enter name" Style="{StaticResource EntryBoxStyle}" />
-            <customRenderers:EntryBoxRenderer Placeholder="Enter password" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Entername}" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enterpassword}" Style="{StaticResource EntryBoxStyle}" />
             <Grid
                 Margin="20,2"
                 ColumnDefinitions="*,*"
@@ -30,18 +32,21 @@
                 <Button
                     Grid.Column="0"
                     Command="{Binding SignInCommand}"
-                    Text="Sign In" />
+                    Text="{x:Static resource:AppResources.SignIn}" />
                 <Button
                     Grid.Column="1"
                     Command="{Binding CancelCommand}"
-                    Text="Cancel" />
+                    Text="{x:Static resource:AppResources.Cancel}" />
             </Grid>
-            <Label HorizontalTextAlignment="Center" FontSize="20" Margin="20">
+            <Label
+                Margin="20"
+                FontSize="20"
+                HorizontalTextAlignment="Center">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span Text="Not registered?" />
+                        <Span Text="{x:Static resource:AppResources.Notregistered_}" />
                         <Span Text=" " />
-                        <Span Text="Register" TextColor="{StaticResource Primary}">
+                        <Span Text="{x:Static resource:AppResources.Register}" TextColor="{StaticResource Primary}">
                             <Span.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding SignInRegisterFormCommand}" CommandParameter="register" />
                             </Span.GestureRecognizers>

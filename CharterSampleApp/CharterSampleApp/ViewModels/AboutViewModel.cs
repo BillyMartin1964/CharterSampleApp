@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 using CharterSampleApp.Interfaces;
+using CharterSampleApp.Resources;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -16,7 +17,7 @@ namespace CharterSampleApp.ViewModels
         private void GetAppVersion()
         {
             // Use Dependency Service to get the platform's app version
-            AppVersion = $"Spectrum Sample App Version: {DependencyService.Get<IGetAppVersion>().GetAppVersion()}";
+            AppVersion = $"{AppResources.AppVersion} {DependencyService.Get<IGetAppVersion>().GetAppVersion()}";
         }
 
         private string appVersion;

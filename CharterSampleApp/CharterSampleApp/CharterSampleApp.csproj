@@ -1,12 +1,27 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en-US</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <NeutralLanguage>en-US</NeutralLanguage>
   </PropertyGroup>
-
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
   <ItemGroup>
+    <None Remove="MultilingualResources\CharterSampleApp.es.xlf" />
+    <None Remove="MultilingualResources\CharterSampleApp.fr.xlf" />
     <None Remove="UserInterface\Fonts\Fa-Solid-900.otf" />
+    <None Remove="UserInterface\Images\LanguageFlags\america.png" />
+    <None Remove="UserInterface\Images\LanguageFlags\france.png" />
+    <None Remove="UserInterface\Images\LanguageFlags\spain.png" />
     <None Remove="UserInterface\Images\PNGs\BillyIcon.png" />
     <None Remove="UserInterface\Images\PNGs\GalaxyPhone.png" />
     <None Remove="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
@@ -15,9 +30,11 @@
     <None Remove="UserInterface\Images\SVGs\up-to-200mbps.svg" />
     <None Remove="UserInterface\Images\SVGs\up-to-400mbps.svg" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="UserInterface\Fonts\Fa-Solid-900.otf" />
+    <EmbeddedResource Include="UserInterface\Images\LanguageFlags\america.png" />
+    <EmbeddedResource Include="UserInterface\Images\LanguageFlags\france.png" />
+    <EmbeddedResource Include="UserInterface\Images\LanguageFlags\spain.png" />
     <EmbeddedResource Include="UserInterface\Images\PNGs\GalaxyPhone.png" />
     <EmbeddedResource Include="UserInterface\Images\PNGs\SSPP_AuthHP_Mobile60_D.png" />
     <EmbeddedResource Include="UserInterface\Images\PNGs\unknownperson.png" />
@@ -25,18 +42,20 @@
     <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-200mbps.svg" />
     <EmbeddedResource Include="UserInterface\Images\SVGs\up-to-400mbps.svg" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />  
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2244" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Include="UserInterface\Images\PNGs\BillyIcon.png" />
   </ItemGroup>
-
   <ItemGroup>
+    <Compile Update="Resources\AppResources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -50,7 +69,6 @@
       <DependentUpon>AuthenticationPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
     <EmbeddedResource Update="ContentViews\AccountContentView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -60,6 +78,10 @@
     </EmbeddedResource>
     <EmbeddedResource Update="ContentViews\SignInForm.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\AccountPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -80,8 +102,11 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
   <ItemGroup>
     <Folder Include="UserInterface\Images\JPGs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\CharterSampleApp.es.xlf" />
+    <XliffResource Include="MultilingualResources\CharterSampleApp.fr.xlf" />
   </ItemGroup>
 </Project>

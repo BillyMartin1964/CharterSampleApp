@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>À propos de</value>
+  </data>
+  <data name="AvailableOn" xml:space="preserve">
+    <value>Disponible sur Android et iPhone</value>
+  </data>
+  <data name="TheNewSpectrumApp" xml:space="preserve">
+    <value>La nouvelle application Spectrum!</value>
+  </data>
+  <data name="AppVersion" xml:space="preserve">
+    <value>Exemple de version de l’application Spectrum :</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>Compte</value>
+  </data>
+  <data name="SignOut" xml:space="preserve">
+    <value>Se déconnecter</value>
+  </data>
+  <data name="AccountNumber:" xml:space="preserve">
+    <value>Numéro de compte:</value>
+  </data>
+  <data name="BillingAddress:" xml:space="preserve">
+    <value>Adresse de facturation :</value>
+  </data>
+  <data name="EmailAddress:" xml:space="preserve">
+    <value>Adresse courriel:</value>
+  </data>
+  <data name="Name:" xml:space="preserve">
+    <value>Nom :</value>
+  </data>
+  <data name="PhoneNumber:" xml:space="preserve">
+    <value>Numéro de téléphone:</value>
+  </data>
+  <data name="ServiceAddress:" xml:space="preserve">
+    <value>Adresse du service :</value>
+  </data>
+  <data name="Alreadyregistered?" xml:space="preserve">
+    <value>Vous êtes déjà inscrit ?</value>
+  </data>
+  <data name="Confirmpassword" xml:space="preserve">
+    <value>Confirmation du mot de passe</value>
+  </data>
+  <data name="ConfirmYourAccount:" xml:space="preserve">
+    <value>Confirmez votre compte :</value>
+  </data>
+  <data name="Enteraccountnumber" xml:space="preserve">
+    <value>Entrez le numéro de compte</value>
+  </data>
+  <data name="Enteremail" xml:space="preserve">
+    <value>Entrez un e-mail</value>
+  </data>
+  <data name="Enterpassword" xml:space="preserve">
+    <value>Entrez le mot de passe</value>
+  </data>
+  <data name="SignIn" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Entername" xml:space="preserve">
+    <value>Entrer un nom</value>
+  </data>
+  <data name="Notregistered?" xml:space="preserve">
+    <value>Vous n’êtes pas inscrit?</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Inscrire</value>
+  </data>
+  <data name="SignInToGetStarted" xml:space="preserve">
+    <value>Connectez-vous pour commencer!</value>
+  </data>
+  <data name="Languages" xml:space="preserve">
+    <value>Langues</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Facturation</value>
+  </data>
+  <data name="BillingDetails" xml:space="preserve">
+    <value>Informations de facturation</value>
+  </data>
+  <data name="NEWCHARGES" xml:space="preserve">
+    <value>NOUVEAUX FRAIS</value>
+  </data>
+  <data name="PREVIOUSACCOUNTACTIVITY" xml:space="preserve">
+    <value>ACTIVITÉ DE COMPTE PRÉCÉDENTE</value>
+  </data>
+  <data name="SERVICEFROM" xml:space="preserve">
+    <value>SERVICE DE</value>
+  </data>
+  <data name="SpectrumInternet:" xml:space="preserve">
+    <value>Internet du spectre :</value>
+  </data>
+  <data name="Total Due by" xml:space="preserve">
+    <value>Total dû d’ici</value>
+  </data>
+  <data name="TotalDueby" xml:space="preserve">
+    <value>Total dû d’ici</value>
+  </data>
+  <data name="View12MonthsBilling" xml:space="preserve">
+    <value>Consultez vos relevés de facturation des 12 derniers mois.</value>
+  </data>
+  <data name="RemainingBalance:" xml:space="preserve">
+    <value>Remaining Balance:</value>
+  </data>
+  <data name="ASP" xml:space="preserve">
+    <value>ASP.Net / MVC (6 mois)</value>
+  </data>
+  <data name="Description1" xml:space="preserve">
+    <value>En tant que développeur Xamarin Forms et WordPress avec plus de 5 ans d’expérience, j’ai créé des applications mobiles, des jeux Xbox et des sites Web professionnels.</value>
+  </data>
+  <data name="Description2" xml:space="preserve">
+    <value>Étant motivé, je peux travailler sans surveillance à distance pendant de longues périodes de temps avec un rendement maximal.</value>
+  </data>
+  <data name="Description3" xml:space="preserve">
+    <value>Mon expérience militaire m’a appris à être aussi un joueur d’équipe, capable à la fois de suivre les instructions et de prendre les choses en main lorsque le besoin s’en fait besoin.</value>
+  </data>
+  <data name="PHPRest" xml:space="preserve">
+    <value>Points de terminaison PHP Rest (1 an)</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Unity3DGameDeveloper" xml:space="preserve">
+    <value>Développeur de jeux Unity 3D (1 an)</value>
+  </data>
+  <data name="WordPressDeveloper5" xml:space="preserve">
+    <value>Développeur WordPress (5 ans)</value>
+  </data>
+  <data name="XamarinFormsDeveloper5" xml:space="preserve">
+    <value>Développeur Xamarin Forms (5 ans)</value>
+  </data>
+</root>

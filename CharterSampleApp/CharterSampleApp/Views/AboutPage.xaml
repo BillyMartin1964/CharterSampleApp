@@ -5,12 +5,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:effects="clr-namespace:CharterSampleApp.Effects;assembly=CharterSampleApp"
     xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
     Title="{Binding Title}"
     BackgroundColor="{StaticResource AppBackgroundColor}">
 
     <Shell.TitleView>
-        <Label Style="{StaticResource TitleBarStyle}" Text="About" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="{x:Static resource:AppResources.About}" />
     </Shell.TitleView>
 
     <ContentPage.BindingContext>
@@ -43,7 +44,7 @@
             FontAttributes="Bold"
             FontSize="28"
             HorizontalTextAlignment="Center"
-            Text="The New Spectrum App!"
+            Text="{x:Static resource:AppResources.TheNewSpectrumApp}"
             TextColor="{StaticResource Primary}">
             <Label.Effects>
                 <effects:ShadowEffect
@@ -73,7 +74,7 @@
             HorizontalOptions="Center"
             Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.GalaxyPhone.png}" />
         <Label Text="{Binding AppVersion}" />
-        <Label Text="Available on Android and iPhone" />
+        <Label Text="{x:Static resource:AppResources.AvailableOn}" />
     </StackLayout>
 
 

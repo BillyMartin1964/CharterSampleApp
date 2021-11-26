@@ -3,7 +3,8 @@
     x:Class="CharterSampleApp.ContentViews.AccountContentView"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:CharterSampleApp.Converters;assembly=CharterSampleApp">
+    xmlns:converters="clr-namespace:CharterSampleApp.Converters;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp">
     <ContentView.Resources>
         <ResourceDictionary>
             <converters:InverseBoolConverter x:Key="ImageConverter" />
@@ -20,10 +21,10 @@
                 BorderColor="{StaticResource Primary}"
                 HasShadow="False">
                 <StackLayout>
-                    <Label  FontSize="22" >
+                    <Label FontSize="22">
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span FontAttributes="Bold" Text="Name:" />
+                                <Span FontAttributes="Bold" Text="{x:Static resource:AppResources.Name_}" />
                                 <Span Text=" " />
                                 <Span Text="{Binding CurrentUserAccount.FirstName}" />
                                 <Span Text=" " />
@@ -35,7 +36,7 @@
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span FontAttributes="Bold" Text="Account Number:" />
+                                <Span FontAttributes="Bold" Text="{x:Static resource:AppResources.AccountNumber_}" />
                                 <Span Text=" " />
                                 <Span FontSize="22" Text="{Binding CurrentUserAccount.AccountNumber}" />
                             </FormattedString>
@@ -45,14 +46,14 @@
                     <Label>
                         <Label.FormattedText>
                             <FormattedString>
-                                <Span FontAttributes="Bold" Text="Phone Number:" />
+                                <Span FontAttributes="Bold" Text="{x:Static resource:AppResources.PhoneNumber_}" />
                                 <Span Text=" " />
                                 <Span FontSize="22" Text="{Binding CurrentUserAccount.PhoneNumber}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>
 
-                    <Label FontAttributes="Bold" Text="Email Address:" />
+                    <Label FontAttributes="Bold" Text="{x:Static resource:AppResources.EmailAddress_}" />
 
                     <Label FontSize="22" Text="{Binding CurrentUserAccount.EmailAddress}" />
 
@@ -69,7 +70,7 @@
                     <Label
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
-                        Text="Service Address:" />
+                        Text="{x:Static resource:AppResources.ServiceAddress:}" />
                     <Label FontSize="22" Text="{Binding CurrentUserAccount.ServiceAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>
@@ -95,7 +96,7 @@
                     <Label
                         Margin="0,0,0,4"
                         FontAttributes="Bold"
-                        Text="Billing Address:" />
+                        Text="{x:Static resource:AppResources.BillingAddress:}" />
                     <Label FontSize="22" Text="{Binding CurrentUserAccount.BillingAddress.StreetAddress}" />
                     <Label>
                         <Label.FormattedText>

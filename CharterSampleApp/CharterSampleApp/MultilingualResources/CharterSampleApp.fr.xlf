@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
+  <file datatype="xml" source-language="en-US" target-language="fr" original="CHARTERSAMPLEAPP/RESOURCES/APPRESOURCES.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+    <header>
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6921.0" tool-company="Microsoft" />
+    </header>
+    <body>
+      <group id="CHARTERSAMPLEAPP/RESOURCES/APPRESOURCES.RESX" datatype="resx">
+        <trans-unit id="About" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
+        </trans-unit>
+        <trans-unit id="AvailableOn" translate="yes" xml:space="preserve">
+          <source>Available on Android and iPhone</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Disponible sur Android et iPhone</target>
+        </trans-unit>
+        <trans-unit id="TheNewSpectrumApp" translate="yes" xml:space="preserve">
+          <source>The New Spectrum App!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La nouvelle application Spectrum!</target>
+        </trans-unit>
+        <trans-unit id="AppVersion" translate="yes" xml:space="preserve">
+          <source>Spectrum Sample App Version:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Exemple de version de l’application Spectrum :</target>
+        </trans-unit>
+        <trans-unit id="Account" translate="yes" xml:space="preserve">
+          <source>Account</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Compte</target>
+        </trans-unit>
+        <trans-unit id="SignOut" translate="yes" xml:space="preserve">
+          <source>Sign Out</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Se déconnecter</target>
+        </trans-unit>
+        <trans-unit id="AccountNumber:" translate="yes" xml:space="preserve">
+          <source>Account Number:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Numéro de compte:</target>
+        </trans-unit>
+        <trans-unit id="BillingAddress:" translate="yes" xml:space="preserve">
+          <source>Billing Address:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adresse de facturation :</target>
+        </trans-unit>
+        <trans-unit id="EmailAddress:" translate="yes" xml:space="preserve">
+          <source>Email Address:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Adresse courriel:</target>
+        </trans-unit>
+        <trans-unit id="Name:" translate="yes" xml:space="preserve">
+          <source>Name:</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom :</target>
+        </trans-unit>
+        <trans-unit id="PhoneNumber:" translate="yes" xml:space="preserve">
+          <source>Phone Number:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Numéro de téléphone:</target>
+        </trans-unit>
+        <trans-unit id="ServiceAddress:" translate="yes" xml:space="preserve">
+          <source>Service Address:</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Adresse du service :</target>
+        </trans-unit>
+        <trans-unit id="Alreadyregistered?" translate="yes" xml:space="preserve">
+          <source>Already registered?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous êtes déjà inscrit ?</target>
+        </trans-unit>
+        <trans-unit id="Confirmpassword" translate="yes" xml:space="preserve">
+          <source>Confirm password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Confirmation du mot de passe</target>
+        </trans-unit>
+        <trans-unit id="ConfirmYourAccount:" translate="yes" xml:space="preserve">
+          <source>Confirm Your Account:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Confirmez votre compte :</target>
+        </trans-unit>
+        <trans-unit id="Enteraccountnumber" translate="yes" xml:space="preserve">
+          <source>Enter account number</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entrez le numéro de compte</target>
+        </trans-unit>
+        <trans-unit id="Enteremail" translate="yes" xml:space="preserve">
+          <source>Enter email</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Entrez un e-mail</target>
+        </trans-unit>
+        <trans-unit id="Enterpassword" translate="yes" xml:space="preserve">
+          <source>Enter password</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Entrez le mot de passe</target>
+        </trans-unit>
+        <trans-unit id="SignIn" translate="yes" xml:space="preserve">
+          <source>Sign In</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Se connecter</target>
+        </trans-unit>
+        <trans-unit id="Cancel" translate="yes" xml:space="preserve">
+          <source>Cancel</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Annuler</target>
+        </trans-unit>
+        <trans-unit id="Entername" translate="yes" xml:space="preserve">
+          <source>Enter name</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Entrer un nom</target>
+        </trans-unit>
+        <trans-unit id="Notregistered?" translate="yes" xml:space="preserve">
+          <source>Not registered?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous n’êtes pas inscrit?</target>
+        </trans-unit>
+        <trans-unit id="Register" translate="yes" xml:space="preserve">
+          <source>Register</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Inscrire</target>
+        </trans-unit>
+        <trans-unit id="SignInToGetStarted" translate="yes" xml:space="preserve">
+          <source>Sign In To Get Started!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Connectez-vous pour commencer!</target>
+        </trans-unit>
+        <trans-unit id="Languages" translate="yes" xml:space="preserve">
+          <source>Languages</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Langues</target>
+        </trans-unit>
+        <trans-unit id="Billing" translate="yes" xml:space="preserve">
+          <source>Billing</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Facturation</target>
+        </trans-unit>
+        <trans-unit id="BillingDetails" translate="yes" xml:space="preserve">
+          <source>Billing Details</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Informations de facturation</target>
+        </trans-unit>
+        <trans-unit id="NEWCHARGES" translate="yes" xml:space="preserve">
+          <source>NEW CHARGES</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">NOUVEAUX FRAIS</target>
+        </trans-unit>
+        <trans-unit id="PREVIOUSACCOUNTACTIVITY" translate="yes" xml:space="preserve">
+          <source>PREVIOUS ACCOUNT ACTIVITY</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ACTIVITÉ DE COMPTE PRÉCÉDENTE</target>
+        </trans-unit>
+        <trans-unit id="SERVICEFROM" translate="yes" xml:space="preserve">
+          <source>SERVICE FROM</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">SERVICE DE</target>
+        </trans-unit>
+        <trans-unit id="SpectrumInternet:" translate="yes" xml:space="preserve">
+          <source>Spectrum Internet:</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Internet du spectre :</target>
+        </trans-unit>
+        <trans-unit id="Total Due by" translate="yes" xml:space="preserve">
+          <source>Total Due by</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Total dû d’ici</target>
+        </trans-unit>
+        <trans-unit id="TotalDueby" translate="yes" xml:space="preserve">
+          <source>Total Due by</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Total dû d’ici</target>
+        </trans-unit>
+        <trans-unit id="View12MonthsBilling" translate="yes" xml:space="preserve">
+          <source>View your billing statements for the last 12 months.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Consultez vos relevés de facturation des 12 derniers mois.</target>
+        </trans-unit>
+        <trans-unit id="RemainingBalance:" translate="yes" xml:space="preserve">
+          <source>Remaining Balance:</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Remaining Balance:</target>
+        </trans-unit>
+        <trans-unit id="ASP" translate="yes" xml:space="preserve">
+          <source>ASP.Net / MVC (6 months)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">ASP.Net / MVC (6 mois)</target>
+        </trans-unit>
+        <trans-unit id="Description1" translate="yes" xml:space="preserve">
+          <source>As a Xamarin Forms and WordPress developer with 5+ years of experience, I have created mobile apps, Xbox games, and business websites.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">En tant que développeur Xamarin Forms et WordPress avec plus de 5 ans d’expérience, j’ai créé des applications mobiles, des jeux Xbox et des sites Web professionnels.</target>
+        </trans-unit>
+        <trans-unit id="Description2" translate="yes" xml:space="preserve">
+          <source>Being self-motivated, I can work unsupervised remotely for long periods of time with maximum output.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Étant motivé, je peux travailler sans surveillance à distance pendant de longues périodes de temps avec un rendement maximal.</target>
+        </trans-unit>
+        <trans-unit id="Description3" translate="yes" xml:space="preserve">
+          <source>My military experience taught me to also be a team player, able to both follow directions and take charge when the need arrives.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mon expérience militaire m’a appris à être aussi un joueur d’équipe, capable à la fois de suivre les instructions et de prendre les choses en main lorsque le besoin s’en fait besoin.</target>
+        </trans-unit>
+        <trans-unit id="PHPRest" translate="yes" xml:space="preserve">
+          <source>PHP Rest Endpoints (1 year)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Points de terminaison PHP Rest (1 an)</target>
+        </trans-unit>
+        <trans-unit id="Profile" translate="yes" xml:space="preserve">
+          <source>Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profil</target>
+        </trans-unit>
+        <trans-unit id="Unity3DGameDeveloper" translate="yes" xml:space="preserve">
+          <source>Unity 3D Game Developer (1 year)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Développeur de jeux Unity 3D (1 an)</target>
+        </trans-unit>
+        <trans-unit id="WordPressDeveloper5" translate="yes" xml:space="preserve">
+          <source>WordPress Developer (5 years)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Développeur WordPress (5 ans)</target>
+        </trans-unit>
+        <trans-unit id="XamarinFormsDeveloper5" translate="yes" xml:space="preserve">
+          <source>Xamarin Forms Developer (5 years)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Développeur Xamarin Forms (5 ans)</target>
+        </trans-unit>
+      </group>
+    </body>
+  </file>
+</xliff>

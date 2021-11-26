@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using CharterSampleApp.ContentViews;
@@ -63,6 +64,9 @@ namespace CharterSampleApp.ViewModels
             changed.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
+
+       
+
 
         private UserAccount currentUserAccount;
 
@@ -128,6 +132,43 @@ namespace CharterSampleApp.ViewModels
                 await App.Current.MainPage.Navigation.PushModalAsync(new AuthenticationPage(), true);
             }
 
+        }
+
+        public void AssignLanguageFlag()
+        {
+           var tempFlag = string.Empty;
+
+            var languageAbrev = Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
+
+            switch (languageAbrev)
+            {
+                case "en":
+                    tempFlag = "america.png";
+                    break;
+                case "es":
+                    tempFlag = "spain.png";
+                    break;
+                case "fr":
+                    tempFlag = "france.png";
+                    break;
+
+                default:
+                    tempFlag = "america.png";
+                    break;
+            }
+
+            LanguageFlag = ImageSource.FromResource($"CharterSampleApp.UserInterface.Images.LanguageFlags.{tempFlag}");
+        }
+
+        private ImageSource languageFlag = null;
+        public ImageSource LanguageFlag
+        {
+            get { return languageFlag; }
+            set
+            {
+                languageFlag = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

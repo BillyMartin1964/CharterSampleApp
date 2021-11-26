@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  BackgroundColor="{StaticResource AppBackgroundColor}"
              xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels"
+             xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
              x:Class="CharterSampleApp.Views.SettingsPage">
     <ContentPage.BindingContext>
         <viewModel:SettingsViewModel />
@@ -10,9 +11,59 @@
         <Label Text="Settings" Style="{StaticResource TitleBarStyle}" />
     </Shell.TitleView>
     <ContentPage.Content>
-        <StackLayout>
-           
-            <Button Text="Open Device Settings For This App" Command="{Binding OpenDeviceSettings}" Margin="20" />
+        <StackLayout Margin="20">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="50,*">
+                    <Label
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Style="{DynamicResource settingsLabelStyle}"
+                    Text="{x:Static resource:AppResources.Languages}" />
+
+                    <Image
+                    x:Name="LanguagesButton"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    HorizontalOptions="Start"
+                    Source="{Binding LanguageFlag}"
+                    VerticalOptions="Center"
+                    WidthRequest="80" />
+                       
+
+                    <CollectionView
+                    x:Name="LanguagesCollectionView"
+                    Grid.Row="1"
+                    Margin="10"
+                    BackgroundColor="Transparent"
+                    ItemsSource="{Binding Languages}"
+                    SelectionChangedCommand="{Binding LanguageSelectedCommand}"
+                    SelectionChangedCommandParameter="{Binding SelectedItem, Source={x:Reference LanguagesCollectionView}}"
+                    SelectionMode="Single"
+                    VerticalOptions="Start">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout
+                                Padding="0"
+                                HorizontalOptions="Start"
+                                Orientation="Horizontal">
+                                    <Image
+                                    Margin="5"
+                                    HeightRequest="30"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding FlagImage}" />
+                                    <Label
+                                    Margin="5"
+                                    FontSize="Small"
+                                    Text="{Binding LanguageName}"
+                                    TextColor="{DynamicResource PageTextColor}"
+                                    VerticalOptions="Center"
+                                    VerticalTextAlignment="Center" />
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            <Button Text="{x:Static resource:AppResources.OpenDeviceSettings}" Command="{Binding OpenDeviceSettings}" Margin="20" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

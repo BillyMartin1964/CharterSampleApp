@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
+
+using CharterSampleApp.Views;
 
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -11,6 +14,8 @@ namespace CharterSampleApp.ViewModels
         public HomeViewModel()
         {
             GetLocation();
+
+            AssignLanguageFlag();
         }
 
         private void GetLocation()
@@ -41,5 +46,16 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
+        private ICommand _openSettingsCommand;
+        public ICommand OpenSettingsCommand =>
+            _openSettingsCommand ??
+            (_openSettingsCommand = new Command(async () => await ExecuteOpenSettingsCommand()));
+
+        private async Task ExecuteOpenSettingsCommand()
+        {
+          //  App.Current.MainPage = new NavigationPage(new SettingsPage());
+
+            await App.Current.MainPage.Navigation.PushModalAsync(new SettingsPage(), true);
+        }
     }
 }

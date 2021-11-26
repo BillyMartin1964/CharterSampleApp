@@ -4,13 +4,14 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:extensions="clr-namespace:CharterSampleApp.Extensions;assembly=CharterSampleApp"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     xmlns:viewModels="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     BackgroundColor="{StaticResource AppBackgroundColor}">
     <ContentPage.BindingContext>
         <viewModels:ProfileViewModel />
     </ContentPage.BindingContext>
     <Shell.TitleView>
-        <Label Style="{StaticResource TitleBarStyle}" Text="Profile" />
+        <Label Style="{StaticResource TitleBarStyle}" Text="{x:Static resource:AppResources.Profile}" />
     </Shell.TitleView>
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -59,7 +60,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     FontSize="15"
-                    Text="Xamarin Forms Developer (5 years)" />
+                    Text="{x:Static resource:AppResources.XamarinFormsDeveloper5}" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
@@ -72,7 +73,7 @@
                     Grid.Row="1"
                     Grid.Column="1"
                     FontSize="15"
-                    Text="WordPress Developer (5 years)" />
+                    Text="{x:Static resource:AppResources.WordPressDeveloper5}" />
                 <Label
                     Grid.Row="2"
                     Grid.Column="0"
@@ -85,7 +86,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     FontSize="15"
-                    Text="Unity 3D Game Developer (1 year)" />
+                    Text="{x:Static resource:AppResources.Unity3DGameDeveloper}" />
                 <Label
                     Grid.Row="3"
                     Grid.Column="0"
@@ -98,7 +99,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     FontSize="15"
-                    Text="PHP Rest Endpoints (1 year)" />
+                    Text="{x:Static resource:AppResources.PHPRest}" />
                 <Label
                     Grid.Row="4"
                     Grid.Column="0"
@@ -111,18 +112,13 @@
                     Grid.Row="4"
                     Grid.Column="1"
                     FontSize="15"
-                    Text="ASP.Net / MVC (6 months)" />
+                    Text="{x:Static resource:AppResources.ASP}" />
 
             </Grid>
 
-            <Label FontSize="14">As a Xamarin Forms and WordPress developer with 5+ years of experience, I have created mobile apps, Xbox games, and business websites.</Label>
-            <Label FontSize="14">
-                Being self-motivated, I can work unsupervised remotely for long periods of time with maximum output.
-            </Label>
-            <Label FontSize="14">
-                My military experience taught me to also be a team player, able to both follow directions and take charge when the need arrives.
-            </Label>
-
-        </StackLayout>
+            <Label FontSize="14" Text="{x:Static resource:AppResources.Description1}" />
+            <Label FontSize="14" Text="{x:Static resource:AppResources.Description2}" />
+            <Label FontSize="14" Text="{x:Static resource:AppResources.Description3}" />
+         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
