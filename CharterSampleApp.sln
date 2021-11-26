@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharterSampleApp.iOS", "Cha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharterSampleApp", "CharterSampleApp\CharterSampleApp\CharterSampleApp.csproj", "{E01C8EA6-7632-4CCD-B1EE-37CFFCF7D582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CharterSampleApp.CharterRestApi", "CharterSampleApp\CharterSampleApp.CharterRestApi\CharterSampleApp.CharterRestApi.csproj", "{C0A0F10C-F4FB-4F33-8F8F-2207A3AADB2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CharterSampleApp.CharterRestApi", "CharterSampleApp\CharterSampleApp.CharterRestApi\CharterSampleApp.CharterRestApi.csproj", "{C0A0F10C-F4FB-4F33-8F8F-2207A3AADB2D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{AB545511-C18E-4A42-8859-CB4666389336}"
 EndProject

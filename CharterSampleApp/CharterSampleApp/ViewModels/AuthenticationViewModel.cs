@@ -17,6 +17,20 @@ namespace CharterSampleApp.ViewModels
             AuthenticationCV = new SignInForm();
         }
 
+
+        private ICommand registerUserCommand;
+        public ICommand RegisterUserCommand =>
+            registerUserCommand ??
+            (registerUserCommand = new Command(ExecuteRegisterUserCommand));
+
+        private void ExecuteRegisterUserCommand()
+        {
+            // Save Registered User
+
+            AuthenticationCV = new SignInForm();
+        }
+
+
         private ICommand showRegisterFormCommand;
 
         public ICommand SignInRegisterFormCommand =>
@@ -35,6 +49,29 @@ namespace CharterSampleApp.ViewModels
                     AuthenticationCV = new SignInForm();
                     break;
             }
+        }
+
+        private ContentView authenticationCV;
+        public ContentView AuthenticationCV
+        {
+            get { return authenticationCV; }
+            set
+            {
+                authenticationCV = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand signInCommand;
+        public ICommand SignInCommand =>
+            signInCommand ??
+            (signInCommand = new Command(ExecuteSignInCommand));
+
+        private void ExecuteSignInCommand()
+        {
+            UserLoggedIn = _Repository.GetSignInStatus();
+
+            Application.Current.MainPage = new AppShell();
         }
 
         private ICommand cancelCommand;

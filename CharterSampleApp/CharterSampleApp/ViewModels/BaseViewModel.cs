@@ -15,7 +15,8 @@ namespace CharterSampleApp.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        //  public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>();
+        public IRepository _Repository => DependencyService.Get<IRepository>();
 
         public BaseViewModel()
         {
@@ -98,50 +99,7 @@ namespace CharterSampleApp.ViewModels
             await Shell.Current.GoToAsync(page);
         }
 
-
-        private ICommand registerUserCommand;
-        public ICommand RegisterUserCommand =>
-            registerUserCommand ??
-            (registerUserCommand = new Command(ExecuteRegisterUserCommand));
-
-        private void ExecuteRegisterUserCommand()
-        {
-            // Save Registered User
-            
-            AuthenticationCV = new SignInForm();
-        }
-
-        private ContentView authenticationCV;
-        public ContentView AuthenticationCV
-        {
-            get { return authenticationCV; }
-            set
-            {
-                authenticationCV = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private ICommand signInCommand;
-        public ICommand SignInCommand =>
-            signInCommand ??
-            (signInCommand = new Command(ExecuteSignInCommand));
-
-        private void ExecuteSignInCommand()
-        {
-
-            UserLoggedIn = true;
-
-            App.UserSignedIn = UserLoggedIn;
-
-            Application.Current.MainPage = new AppShell();
-
-        }
-
-
-
-
-
+        
         private string userLoggedInMessage;
         public string UserLoggedInMessage
         {
