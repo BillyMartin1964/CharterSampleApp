@@ -1,4 +1,6 @@
-﻿using CharterSampleApp.Models;
+﻿using System.Collections.ObjectModel;
+
+using CharterSampleApp.Models;
 
 namespace CharterSampleApp.Services
 {
@@ -7,5 +9,6 @@ namespace CharterSampleApp.Services
         bool RegisterNewUser();
         bool GetSignInStatus();
         UserAccount GetCurrentUserAccount();
+        ObservableCollection<BillingStatement> GetUserBillingStatements();
     }
 }

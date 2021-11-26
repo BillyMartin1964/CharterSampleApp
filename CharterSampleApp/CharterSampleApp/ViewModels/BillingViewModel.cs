@@ -18,21 +18,27 @@ namespace CharterSampleApp.ViewModels
     {
         public BillingViewModel()
         {
+            SortIcon = "\uf103"; // Changes for up or down sort arrows
+
             GetBillingCollection();
-            SortIcon = "\uf103";
         }
 
         private void GetBillingCollection()
         {
             BillingStatements = new ObservableCollection<BillingStatement>();
-            BillingStatements = DummyData.GetDummyBillingData();
+
+            //Get fake user billing statements for demonstration purposes
+            BillingStatements = _Repository.GetUserBillingStatements();
+
+            //Separate collection used for data manipulation - filter,  search, sort
             DisplayedBillingStatements = new ObservableCollection<BillingStatement>(BillingStatements);
+
+            // Bindable string for searching through billing statements
             SearchString = string.Empty;
         }
 
 
         private ObservableCollection<BillingStatement> billingStatements;
-
         public ObservableCollection<BillingStatement> BillingStatements
         {
             get { return billingStatements; }
@@ -44,7 +50,6 @@ namespace CharterSampleApp.ViewModels
         }
 
         private ObservableCollection<BillingStatement> displayedBillingStatements;
-
         public ObservableCollection<BillingStatement> DisplayedBillingStatements
         {
             get { return displayedBillingStatements; }
@@ -55,41 +60,9 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-        private BillingStatement selectedBillingStatement;
 
-        public BillingStatement SelectedBillingStatement
-        {
-            get { return selectedBillingStatement; }
-            set
-            {
-                selectedBillingStatement = value;
-                OnPropertyChanged();
-            }
-        }
 
-        private string sortIcon;
-
-        public string SortIcon
-        {
-            get { return sortIcon; }
-            set
-            {
-                sortIcon = value;
-                OnPropertyChanged();
-            }
-        }
-
-        private string searchString;
-        public string SearchString
-        {
-            get { return searchString; }
-            set
-            {
-                searchString = value;
-
-                OnPropertyChanged();
-            }
-        }
+        #region Select
 
         private object selectedItem;
         public object SelectedItem
@@ -102,10 +75,18 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-
+        private BillingStatement selectedBillingStatement;
+        public BillingStatement SelectedBillingStatement
+        {
+            get { return selectedBillingStatement; }
+            set
+            {
+                selectedBillingStatement = value;
+                OnPropertyChanged();
+            }
+        }
 
         private ICommand _billingStatementOnItemSelectedCommand;
-
         public ICommand BillingStatementOnItemSelectedCommand =>
             _billingStatementOnItemSelectedCommand ??
             (_billingStatementOnItemSelectedCommand = new Command<object>(async (x) => await ExecuteBillingStatementOnItemSelectedCommand(x)));
@@ -124,6 +105,7 @@ namespace CharterSampleApp.ViewModels
             if (SelectedBillingStatement != null)
             {
                 App.SelectedBillingStatement = SelectedBillingStatement;
+
                 // This will push the ItemDetailPage onto the navigation stack
                 await Shell.Current.GoToAsync("billingdetailpage");
 
@@ -134,8 +116,23 @@ namespace CharterSampleApp.ViewModels
             return;
         }
 
-        private ICommand searchCollectionViewCommand;
+        #endregion
 
+        #region Search
+
+        private string searchString;
+        public string SearchString
+        {
+            get { return searchString; }
+            set
+            {
+                searchString = value;
+
+                OnPropertyChanged();
+            }
+        }
+
+        private ICommand searchCollectionViewCommand;
         public ICommand SearchCollectionViewCommand =>
             searchCollectionViewCommand ??
             (searchCollectionViewCommand = new Command(ExecuteSearchCollectionViewCommand));
@@ -151,10 +148,13 @@ namespace CharterSampleApp.ViewModels
             }
             else
             {
-
                 DisplayedBillingStatements = BillingStatements;
             }
         }
+
+        #endregion
+
+        #region Filter
 
         private ICommand filterBillingStatementsCommand;
         public ICommand FilterBillingStatementsCommand =>
@@ -174,16 +174,6 @@ namespace CharterSampleApp.ViewModels
         {
             try
             {
-                //        int index = DisplayedBillingStatements.Count - 1;
-
-                //        for (int i = index; i >= 0; --i)
-                //        {
-                //            if (DisplayedBillingStatements[i]._id == 1)
-                //            {
-                //                DisplayedBillingStatements.Remove(DisplayedBillingStatements[i]);
-                //            }
-                //        }
-
                 ObservableCollection<BillingStatement> tempFilteredCollection = new ObservableCollection<BillingStatement>();
 
                 switch (filterFactor)
@@ -200,8 +190,6 @@ namespace CharterSampleApp.ViewModels
                         }
 
                         break;
-
-
 
                     case "Present Statements":
 
@@ -222,13 +210,10 @@ namespace CharterSampleApp.ViewModels
 
                         break;
 
-
                     default:
                         tempFilteredCollection = BillingStatements;
                         break;
                 }
-
-
 
                 if (tempFilteredCollection.Count > 0)
                 {
@@ -237,7 +222,23 @@ namespace CharterSampleApp.ViewModels
             }
             catch (Exception exception)
             {
+                Console.WriteLine(exception);
                 // Crashes.TrackError(exception);
+            }
+        }
+
+        #endregion
+
+        #region Sort
+
+        private string sortIcon;
+        public string SortIcon
+        {
+            get { return sortIcon; }
+            set
+            {
+                sortIcon = value;
+                OnPropertyChanged();
             }
         }
 
@@ -279,5 +280,8 @@ namespace CharterSampleApp.ViewModels
 
             DisplayedBillingStatements = new ObservableCollection<BillingStatement>(tempBillingStatements);
         }
+
+        #endregion
+
     }
 }

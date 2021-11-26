@@ -14,16 +14,16 @@ namespace CharterSampleApp.ViewModels
     {
         public AuthenticationViewModel()
         {
-            AuthenticationCV = new SignInForm();
+            AuthenticationCv = new SignInForm();
         }
 
-        private ContentView authenticationCV;
-        public ContentView AuthenticationCV
+        private ContentView authenticationCv;
+        public ContentView AuthenticationCv
         {
-            get { return authenticationCV; }
+            get { return authenticationCv; }
             set
             {
-                authenticationCV = value;
+                authenticationCv = value;
                 OnPropertyChanged();
             }
         }
@@ -43,7 +43,7 @@ namespace CharterSampleApp.ViewModels
 
             if (registrationSuccessful)
             {
-                AuthenticationCV = new SignInForm();
+                AuthenticationCv = new SignInForm();
             }
             else
             {
@@ -63,11 +63,11 @@ namespace CharterSampleApp.ViewModels
             switch (obj)
             {
                 case "register":
-                    AuthenticationCV = new RegisterForm();
+                    AuthenticationCv = new RegisterForm();
                     break;
 
                 case "sign in":
-                    AuthenticationCV = new SignInForm();
+                    AuthenticationCv = new SignInForm();
                     break;
             }
         }

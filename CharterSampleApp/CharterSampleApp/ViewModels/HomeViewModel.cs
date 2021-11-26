@@ -15,11 +15,22 @@ namespace CharterSampleApp.ViewModels
 
         private void GetLocation()
         {
-            AvailableInText = "Now available in your area";
+            // Add gps call here
+            Random randomNumber = new Random();
+
+            bool isAvailableInArea = Convert.ToBoolean(randomNumber.Next(2));
+
+            if (isAvailableInArea)
+            {
+                AvailableInText = "Now available in your area";
+            }
+            else
+            {
+                AvailableInText = "Coming soon to your area";
+            }
         }
 
         private string availableInText;
-
         public string AvailableInText
         {
             get { return availableInText; }
@@ -30,7 +41,5 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
-        private double latitude;
-      
     }
 }

@@ -9,20 +9,19 @@ namespace CharterSampleApp.ViewModels
     {
         public BillingDetailViewModel()
         {
-            DisplayDetals();
+            DisplayDetails();
         }
 
-        private void DisplayDetals()
+        private void DisplayDetails()
         {
             if (App.SelectedBillingStatement != null)
             {
+                // Get selected statement saved to a global
                 SelectedBillingStatement = App.SelectedBillingStatement;
             }
         }
-
-
+        
         private BillingStatement selectedBillingStatement;
-
         public BillingStatement SelectedBillingStatement
         {
             get { return selectedBillingStatement; }

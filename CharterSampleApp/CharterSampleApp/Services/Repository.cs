@@ -1,4 +1,5 @@
-﻿using CharterSampleApp.Models;
+﻿using System.Collections.ObjectModel;
+using CharterSampleApp.Models;
 
 namespace CharterSampleApp.Services
 {
@@ -25,6 +26,12 @@ namespace CharterSampleApp.Services
         {
             // Return fake data for demonstration purposes
             return DummyData.GetUserAccount();
+        }
+
+        public ObservableCollection<BillingStatement> GetUserBillingStatements()
+        {
+            // Return fake data for demonstration purposes
+            return DummyData.GetDummyBillingData();
         }
     }
 }

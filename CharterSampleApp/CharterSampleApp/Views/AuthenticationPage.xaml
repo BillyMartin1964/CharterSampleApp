@@ -13,11 +13,11 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style TargetType="Entry">
-             <Setter Property="FontSize" Value="20" />
+                <Setter Property="FontSize" Value="20" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <ContentView Content="{Binding AuthenticationCV}" />
+        <ContentView Content="{Binding AuthenticationCv}" />
     </ContentPage.Content>
 </ContentPage>
