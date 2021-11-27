@@ -43,7 +43,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converter:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converter:BooleanToStringConverter x:Key="BooleanToStringConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -58,9 +58,9 @@
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding OpenSettingsCommand}" />
                 </Image.GestureRecognizers>
-                </Image>
+            </Image>
 
-                <Label
+            <Label
                 Margin="20"
                 FontAttributes="Bold"
                 FontSize="Large"
@@ -147,7 +147,9 @@
                 Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"
                 WidthRequest="400" />
 
-            <Label HorizontalTextAlignment="Center" Text="{Binding AvailableInText}" />
+            <!--<Label HorizontalTextAlignment="Center" Text="{Binding AvailableInText}" />-->
+
+            <Label HorizontalTextAlignment="Center" Text="{Binding IsAvailableInArea, Converter={StaticResource BooleanToStringConverter}}" />
 
             <Button
                 x:Name="SignInButton"

@@ -21,28 +21,22 @@ namespace CharterSampleApp.ViewModels
 
         private void GetLocation()
         {
-            // Add gps call here
+            // Normally would add a gps call here:
+
+            // Coin flip to see if Spectrum is available in area.
             Random randomNumber = new Random();
 
-            bool isAvailableInArea = Convert.ToBoolean(randomNumber.Next(2));
-
-            if (isAvailableInArea)
-            {
-                AvailableInText = AppResources.NowAvailable;
-            }
-            else
-            {
-                AvailableInText = AppResources.ComingSoon;
-            }
+            // Bound bool will be sent to a convert to return the appropriate string response
+            IsAvailableInArea = Convert.ToBoolean(randomNumber.Next(2));
         }
 
-        private string availableInText;
-        public string AvailableInText
+        private bool isAvailableInArea;
+        public bool IsAvailableInArea
         {
-            get { return availableInText; }
+            get { return isAvailableInArea; }
             set
             {
-                availableInText = value;
+                isAvailableInArea = value;
                 OnPropertyChanged();
             }
         }
@@ -54,8 +48,6 @@ namespace CharterSampleApp.ViewModels
 
         private async Task ExecuteOpenSettingsCommand()
         {
-            //  App.Current.MainPage = new NavigationPage(new SettingsPage());
-
             await App.Current.MainPage.Navigation.PushModalAsync(new SettingsPage(), true);
         }
     }
