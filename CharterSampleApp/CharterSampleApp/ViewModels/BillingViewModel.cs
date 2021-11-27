@@ -37,7 +37,7 @@ namespace CharterSampleApp.ViewModels
             SearchString = string.Empty;
         }
 
-
+     
         private ObservableCollection<BillingStatement> billingStatements;
         public ObservableCollection<BillingStatement> BillingStatements
         {
@@ -60,11 +60,35 @@ namespace CharterSampleApp.ViewModels
             }
         }
 
+        private ICommand refreshStatementListCommand;
+        public ICommand RefreshStatementListCommand =>
+            refreshStatementListCommand ??
+            (refreshStatementListCommand = new Command(ExecuteRefreshStatementListCommand));
+
+        private void ExecuteRefreshStatementListCommand()
+        {
+            IsBusy = true;
+
+          BillingStatements.Clear();
+
+            GetBillingCollection();
+
+            //if (BillingStatements == null)
+            //{
+            //    return false;
+            //}
+            //else
+            //{
+            //     return true;  
+            //}
+
+            IsBusy = false;
+        }
 
 
         #region Select
 
- 
+
 
         private BillingStatement selectedBillingStatement;
         public BillingStatement SelectedBillingStatement

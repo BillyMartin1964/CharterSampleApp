@@ -218,6 +218,10 @@
           <source>Now available in your area</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Maintenant disponible dans votre région</target>
         </trans-unit>
+        <trans-unit id="PullToRefresh" translate="yes" xml:space="preserve">
+          <source>Pull To Refresh</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tirer pour actualiser</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -171,4 +171,7 @@
   <data name="NowAvailable" xml:space="preserve">
     <value>Ahora disponible en su área</value>
   </data>
+  <data name="PullToRefresh" xml:space="preserve">
+    <value>Tirar para actualizar</value>
+  </data>
 </root>
