@@ -9,6 +9,8 @@
     xmlns:system="clr-namespace:System;assembly=netstandard"
     xmlns:viewModel="clr-namespace:CharterSampleApp.ViewModels;assembly=CharterSampleApp"
     xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    ios:Page.UseSafeArea="True"
     BackgroundColor="{StaticResource AppBackgroundColor}">
 
     <ContentPage.BindingContext>

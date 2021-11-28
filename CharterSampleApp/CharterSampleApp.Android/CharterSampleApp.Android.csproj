@@ -16,7 +16,6 @@
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v11.0</TargetFrameworkVersion>
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
@@ -116,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CharterSampleApp\CharterSampleApp.csproj">
-      <Project>{EC4903BF-A099-489F-AC20-C3C8CEA34915}</Project>
+      <Project>{E01C8EA6-7632-4CCD-B1EE-37CFFCF7D582}</Project>
       <Name>CharterSampleApp</Name>
     </ProjectReference>
   </ItemGroup>
