@@ -22,13 +22,11 @@ namespace CharterSampleApp.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
-         
-
+            
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
-            CachedImageRenderer.InitImageViewHandler();
+            //CachedImageRenderer.InitImageViewHandler();
             var ignore = typeof(SvgCachedImage);
             LoadApplication(new App());
         }

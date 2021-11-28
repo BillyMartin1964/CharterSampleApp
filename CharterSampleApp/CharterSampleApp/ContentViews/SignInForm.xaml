@@ -23,8 +23,8 @@
                 HorizontalTextAlignment="Center"
                 Text="{x:Static resource:AppResources.SignInToGetStarted}" />
 
-            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Entername}" Style="{StaticResource EntryBoxStyle}" />
-            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enterpassword}" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enteremail}" Style="{StaticResource EntryBoxStyle}" />
+            <customRenderers:EntryBoxRenderer Placeholder="{x:Static resource:AppResources.Enterpassword}" Style="{StaticResource EntryBoxStyle}" IsPassword="True" />
             <Grid
                 Margin="20,2"
                 ColumnDefinitions="*,*"

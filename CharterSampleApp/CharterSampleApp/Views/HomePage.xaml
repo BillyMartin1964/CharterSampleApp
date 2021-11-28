@@ -47,7 +47,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Margin="0" Padding="0">
             <Image Margin="5"
                 x:Name="LanguagesButton"
                 HeightRequest="25"
@@ -61,7 +61,7 @@
             </Image>
 
             <Label
-                Margin="20"
+                Margin="10"
                 FontAttributes="Bold"
                 FontSize="Large"
                 HorizontalOptions="CenterAndExpand">
@@ -97,7 +97,7 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-200mbps.svg"
-                    WidthRequest="90" />
+                    WidthRequest="70" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="0"
@@ -110,7 +110,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-400mbps.svg"
-                    WidthRequest="90" />
+                    WidthRequest="70" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="1"
@@ -123,7 +123,7 @@
                     Grid.Row="0"
                     Grid.Column="2"
                     Source="resource://CharterSampleApp.UserInterface.Images.SVGs.up-to-1gbps.svg"
-                    WidthRequest="90" />
+                    WidthRequest="70" />
                 <Label
                     Grid.Row="1"
                     Grid.Column="2"
@@ -142,10 +142,10 @@
             </Grid>
 
             <Image
-                Margin="0,30"
+                Margin="0,20"
                 Aspect="AspectFit"
                 Source="{extensions:ImageResource CharterSampleApp.UserInterface.Images.PNGs.SSPP_AuthHP_Mobile60_D.png}"
-                WidthRequest="400" />
+                WidthRequest="300" />
 
             <!--<Label HorizontalTextAlignment="Center" Text="{Binding AvailableInText}" />-->
 
@@ -153,7 +153,7 @@
 
             <Button
                 x:Name="SignInButton"
-                Margin="30"
+                Margin="30, 10, 30, 0"
                 Command="{Binding NavigateForSignInCommand}"
                 Text="{x:Static resource:AppResources.SignIn}" />
         </StackLayout>
