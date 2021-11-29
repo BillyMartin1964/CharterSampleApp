@@ -27,8 +27,8 @@
         <Label FontAttributes="Bold" HorizontalTextAlignment="Center">
             <Label.FormattedText>
                 <FormattedString>
-                    <Span Text="{x:Static resource:AppResources.SERVICEFROM}" />
-                    <Span Text="{Binding SelectedBillingStatement.ServiceFrom}" />
+                    <Span Text="{x:Static resource:AppResources.SERVICEFROM} " />
+                    <Span Text=" {Binding SelectedBillingStatement.ServiceFrom}" />
                 </FormattedString>
             </Label.FormattedText>
         </Label>
@@ -63,7 +63,7 @@
                             <FormattedString>
                                 <Span FontAttributes="Bold" Text="{x:Static resource:AppResources.AccountNumber_}" />
                                 <Span Text=" " />
-                                <Span Text="{Binding CurrentUserAccount.AccountNumber}" />
+                                <Span Text="{Binding SelectedBillingStatement.AccountNumber}" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label>

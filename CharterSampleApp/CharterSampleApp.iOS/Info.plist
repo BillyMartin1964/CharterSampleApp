@@ -15,7 +15,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>Charter Sample App</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.CharterSampleApp</string>
+	<string>com.sitesculptors.chartersampleapp</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>UILaunchStoryboardName</key>

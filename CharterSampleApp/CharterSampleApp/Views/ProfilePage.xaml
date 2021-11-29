@@ -31,7 +31,7 @@
         <StackLayout Margin="0" Padding="10">
             <Button
                 Margin="0"
-                Padding="1, 0"
+                Padding="1,0"
                 Command="{Binding NavigateForSignInCommand}"
                 FontSize="14"
                 HeightRequest="20"
@@ -122,10 +122,13 @@
                     Text="{x:Static resource:AppResources.ASP}" />
 
             </Grid>
-
-            <Label FontSize="14" Text="{x:Static resource:AppResources.Description1}" />
-            <Label FontSize="14" Text="{x:Static resource:AppResources.Description2}" />
-            <Label FontSize="14" Text="{x:Static resource:AppResources.Description3}" />
-         </StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label FontSize="14" Text="{x:Static resource:AppResources.Description1}" />
+                    <Label FontSize="14" Text="{x:Static resource:AppResources.Description2}" />
+                    <Label FontSize="14" Text="{x:Static resource:AppResources.Description3}" />
+                </StackLayout> 
+            </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

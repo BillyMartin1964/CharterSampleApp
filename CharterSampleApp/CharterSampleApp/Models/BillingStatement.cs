@@ -7,6 +7,7 @@ namespace CharterSampleApp.Models
     public class BillingStatement
     {
         public int BillingStatementId { get; set; }
+        public int AccountNumber { get; set; }
         public string BillingMonth { get; set; } 
         public string  ServiceFrom { get; set; }
         public string DueDate { get; set; }
