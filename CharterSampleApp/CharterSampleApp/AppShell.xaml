@@ -4,6 +4,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:CharterSampleApp.Views"
+    xmlns:resource="clr-namespace:CharterSampleApp.Resources;assembly=CharterSampleApp"
     Title="CharterSampleApp">
 
     <!--
@@ -39,7 +40,7 @@
         </ShellContent>-->
 
         <ShellContent
-            Title="Billing"
+            Title="{x:Static resource:AppResources.Billing}"
             ContentTemplate="{DataTemplate local:BillingPage}"
             Route="BillingPage">
             <ShellContent.Icon>
@@ -48,7 +49,7 @@
         </ShellContent>
 
         <ShellContent
-            Title="Account"
+            Title="{x:Static resource:AppResources.Account}"
             ContentTemplate="{DataTemplate local:AccountPage}"
             Route="AccountPage">
             <ShellContent.Icon>
@@ -58,7 +59,7 @@
 
 
         <ShellContent
-            Title="About"
+            Title="{x:Static resource:AppResources.About}"
             ContentTemplate="{DataTemplate local:AboutPage}"
             Route="AboutPage">
             <ShellContent.Icon>
@@ -67,7 +68,7 @@
         </ShellContent>
 
         <ShellContent
-            Title="Profile"
+            Title="{x:Static resource:AppResources.Profile}"
             ContentTemplate="{DataTemplate local:ProfilePage}"
             Route="ProfilePage">
             <ShellContent.Icon>
